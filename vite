@@ -1,0 +1,49 @@
+
+
+  VITE v7.2.4  ready in 544 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+11:27:40 PM [vite] (client) Pre-transform error: Failed to resolve import "../contexts/AuthCont
+11:27:40 PM [vite] (client) Pre-transform error: Failed to resolve import "../contexts/AuthContext" from "src/pages/admin/AdminLoginPage.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/abdellahsa/Desktop/heritage-site/frontend/src/pages/admin/AdminLoginPage.tsx:3:2
+  File: /Users/abdellahsa/Desktop/heritage-site/frontend/src/pages/admin/AdminLoginPage.tsx:3:24
+  3  |  import React, { useState } from "react";
+  4  |  import { useNavigate } from "react-router-dom";
+  5  |  import { useAuth } from "../contexts/AuthContext";
+     |                           ^
+  6  |  import { Button } from "../components/ui/Button";
+  7  |  import { Input } from "../components/ui/Input";
+11:27:40 PM [vite] Internal server error: Failed to resolve import "../contexts/AuthContext" fr
+11:27:40 PM [vite] Internal server error: Failed to resolve import "../contexts/AuthContext" from "src/pages/admin/AdminLoginPage.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/abdellahsa/Desktop/heritage-site/frontend/src/pages/admin/AdminLoginPage.tsx:3:2
+  File: /Users/abdellahsa/Desktop/heritage-site/frontend/src/pages/admin/AdminLoginPage.tsx:3:24
+  3  |  import React, { useState } from "react";
+  4  |  import { useNavigate } from "react-router-dom";
+  5  |  import { useAuth } from "../contexts/AuthContext";
+     |                           ^
+  6  |  import { Button } from "../components/ui/Button";
+  7  |  import { Input } from "../components/ui/Input";
+      at TransformPluginContext._formatLog (file:///Users/abdellahsa/Desktop/heritage-site/fron
+      at TransformPluginContext._formatLog (file:///Users/abdellahsa/Desktop/heritage-site/frontend/node_modules/vite/dist/node/chunks/config.js:29647:43)
+      at TransformPluginContext.error (file:///Users/abdellahsa/Desktop/heritage-site/frontend/
+      at TransformPluginContext.error (file:///Users/abdellahsa/Desktop/heritage-site/frontend/node_modules/vite/dist/node/chunks/config.js:29644:14)
+      at normalizeUrl (file:///Users/abdellahsa/Desktop/heritage-site/frontend/node_modules/vit
+      at normalizeUrl (file:///Users/abdellahsa/Desktop/heritage-site/frontend/node_modules/vite/dist/node/chunks/config.js:27767:18)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/abdellahsa/Desktop/heritage-site/frontend/node_modules/vite/dist/n
+      at async file:///Users/abdellahsa/Desktop/heritage-site/frontend/node_modules/vite/dist/node/chunks/config.js:27825:32
+      at async Promise.all (index 3)
+      at async TransformPluginContext.transform (file:///Users/abdellahsa/Desktop/heritage-site
+      at async TransformPluginContext.transform (file:///Users/abdellahsa/Desktop/heritage-site/frontend/node_modules/vite/dist/node/chunks/config.js:27793:4)
+      at async EnvironmentPluginContainer.transform (file:///Users/abdellahsa/Desktop/heritage-
+      at async EnvironmentPluginContainer.transform (file:///Users/abdellahsa/Desktop/heritage-site/frontend/node_modules/vite/dist/node/chunks/config.js:29445:14)
+      at async loadAndTransform (file:///Users/abdellahsa/Desktop/heritage-site/frontend/node_m
+      at async loadAndTransform (file:///Users/abdellahsa/Desktop/heritage-site/frontend/node_modules/vite/dist/node/chunks/config.js:23316:26)
+      at async viteTransformMiddleware (file:///Users/abdellahsa/Desktop/heritage-site/frontend
+      at async viteTransformMiddleware (file:///Users/abdellahsa/Desktop/heritage-site/frontend/node_modules/vite/dist/node/chunks/config.js:25188:20)
+11:28:01 PM [vite] (client) hmr update /src/App.tsx, /src/index.css
+11:28:18 PM [vite] (client) hmr update /src/pages/admin/AdminLoginPage.tsx, /src/index.css

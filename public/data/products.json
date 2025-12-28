@@ -1,0 +1,153 @@
+[
+  {
+    "id": "caftan-royal-dore",
+    "name": "Caftan Royal Doré",
+    "type": "caftan",
+    "description": "Magnifique caftan traditionnel brodé à la main avec des motifs dorés. Parfait pour les mariages et occasions spéciales.",
+    "imageUrl": "/assets/products/caftan-royal-dore.jpg",
+    "price": 1500,
+    "available": true,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "takchita-bordeaux-premium",
+    "name": "Takchita Bordeaux Premium",
+    "type": "takchita",
+    "description": "Takchita en velours bordeaux avec ceinture dorée et broderies argentées. Élégance et raffinement garantis.",
+    "imageUrl": "/assets/products/takchita-bordeaux-premium.jpg",
+    "price": 2200,
+    "available": true,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "caftan-emeraude-moderne",
+    "name": "Caftan Émeraude Moderne",
+    "type": "caftan",
+    "description": "Caftan moderne en soie verte émeraude avec des détails en perles. Design contemporain inspiré de la tradition.",
+    "imageUrl": "/assets/products/caftan-emeraude-moderne.jpg",
+    "price": 1800,
+    "available": true,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "karakou-algerien-traditionnel",
+    "name": "Karakou Algérien Traditionnel",
+    "type": "karakou",
+    "description": "Karakou authentique en velours noir avec broderies dorées. Tenue emblématique algéroise.",
+    "imageUrl": "/assets/products/karakou-algerien-traditionnel.jpg",
+    "price": 1600,
+    "available": true,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "jellaba-creme-elegante",
+    "name": "Jellaba Crème Élégante",
+    "type": "jellaba",
+    "description": "Jellaba en soie crème avec capuche brodée. Confort et élégance pour toutes occasions.",
+    "imageUrl": "/assets/products/jellaba-creme-elegante.jpg",
+    "price": 900,
+    "available": true,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "gandoura-blanche-traditionnelle",
+    "name": "Gandoura Blanche Traditionnelle",
+    "type": "gandoura",
+    "description": "Gandoura blanche en coton fin avec broderies argentées. Simplicité et raffinement.",
+    "imageUrl": "/assets/products/gandoura-blanche-traditionnelle.jpg",
+    "price": 750,
+    "available": true,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "takchita-rose-poudre",
+    "name": "Takchita Rose Poudré",
+    "type": "takchita",
+    "description": "Takchita romantique en rose poudré avec ceinture en cristaux. Parfaite pour les mariées modernes.",
+    "imageUrl": "/assets/products/takchita-rose-poudre.jpg",
+    "price": 2500,
+    "available": true,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "keswa-el-kbira-fassia",
+    "name": "Keswa El Kbira Fassia",
+    "type": "keswa",
+    "description": "Keswa traditionnelle de Fès en sept pièces. Ensemble complet pour mariée avec tous les accessoires.",
+    "imageUrl": "/assets/products/keswa-el-kbira-fassia.jpg",
+    "price": 3500,
+    "available": true,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "caftan-bleu-nuit-perle",
+    "name": "Caftan Bleu Nuit Perlé",
+    "type": "caftan",
+    "description": "Caftan en satin bleu marine décoré de perles et paillettes. Sophistication pour vos soirées.",
+    "imageUrl": "/assets/products/caftan-bleu-nuit-perle.jpg",
+    "price": 1700,
+    "available": true,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "fouta-mariage-luxe",
+    "name": "Fouta Mariage Luxe",
+    "type": "fouta",
+    "description": "Fouta de mariée richement décorée avec broderies dorées et argentées. Tradition tunisienne.",
+    "imageUrl": "/assets/products/fouta-mariage-luxe.jpg",
+    "price": 2800,
+    "available": true,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "karakou-velours-rouge",
+    "name": "Karakou Velours Rouge",
+    "type": "karakou",
+    "description": "Karakou en velours rouge avec broderies dorées complexes. Chef-d'œuvre artisanal.",
+    "imageUrl": "/assets/products/karakou-velours-rouge.jpg",
+    "price": 1750,
+    "available": true,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "caftan-blanc-mariee",
+    "name": "Caftan Blanc Mariée",
+    "type": "caftan",
+    "description": "Caftan de mariée en blanc pur avec broderies argentées et cristaux Swarovski.",
+    "imageUrl": "/assets/products/caftan-blanc-mariee.jpg",
+    "price": 3200,
+    "available": true,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "takchita-champagne-luxe",
+    "name": "Takchita Champagne Luxe",
+    "type": "takchita",
+    "description": "Takchita couleur champagne avec sfifa dorée et broderies fines. Luxe à l'état pur.",
+    "imageUrl": "/assets/products/takchita-champagne-luxe.jpg",
+    "price": 2400,
+    "available": false,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "jellaba-soie-corail",
+    "name": "Jellaba Soie Corail",
+    "type": "jellaba",
+    "description": "Jellaba en soie corail avec broderies ton sur ton. Fraîcheur et élégance estivale.",
+    "imageUrl": "/assets/products/jellaba-soie-corail.jpg",
+    "price": 1100,
+    "available": true,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "gandoura-vert-jade",
+    "name": "Gandoura Vert Jade",
+    "type": "gandoura",
+    "description": "Gandoura en mousseline vert jade avec détails brodés. Légèreté et confort.",
+    "imageUrl": "/assets/products/gandoura-vert-jade.jpg",
+    "price": 850,
+    "available": true,
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  }
+]
+
