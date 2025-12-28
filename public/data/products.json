@@ -1,20 +1,20 @@
 [
   {
-    "id": "caftan-royal-dore",
-    "name": "Caftan Royal Doré",
+    "id": "caftan-black-dore",
+    "name": "Caftan Black Doré",
     "type": "caftan",
     "description": "Magnifique caftan traditionnel brodé à la main avec des motifs dorés. Parfait pour les mariages et occasions spéciales.",
-    "imageUrl": "/assets/products/caftan-royal-dore.jpg",
+    "imageUrl": "/assets/products/caftan-black-dore.jpg",
     "price": 1500,
     "available": true,
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
-    "id": "takchita-bordeaux-premium",
-    "name": "Takchita Bordeaux Premium",
+    "id": "takchita-white",
+    "name": "Takchita White",
     "type": "takchita",
     "description": "Takchita en velours bordeaux avec ceinture dorée et broderies argentées. Élégance et raffinement garantis.",
-    "imageUrl": "/assets/products/takchita-bordeaux-premium.jpg",
+    "imageUrl": "/assets/products/takchita-white.jpeg",
     "price": 2200,
     "available": true,
     "createdAt": "2024-01-01T00:00:00.000Z"
@@ -30,11 +30,11 @@
     "createdAt": "2024-01-01T00:00:00.000Z"
   },
   {
-    "id": "karakou-algerien-traditionnel",
-    "name": "Karakou Algérien Traditionnel",
+    "id": "karakou-black",
+    "name": "Karakou Black",
     "type": "karakou",
     "description": "Karakou authentique en velours noir avec broderies dorées. Tenue emblématique algéroise.",
-    "imageUrl": "/assets/products/karakou-algerien-traditionnel.jpg",
+    "imageUrl": "/assets/products/karakou-black.jpeg",
     "price": 1600,
     "available": true,
     "createdAt": "2024-01-01T00:00:00.000Z"

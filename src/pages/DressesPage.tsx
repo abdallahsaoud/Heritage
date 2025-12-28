@@ -4,7 +4,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import { Card } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
-import { Loading, CardSkeleton } from '../components/ui/Loading';
+import { CardSkeleton } from '../components/ui/Loading';
 import { dressesService } from '../services/dresses.service';
 import { DressType } from '../types/index';
 import { formatPrice, getDressTypeName } from '../utils/helpers';

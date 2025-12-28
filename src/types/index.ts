@@ -1,12 +1,21 @@
-export enum DressType {
-  CAFTAN = 'caftan',
-  TAKCHITA = 'takchita',
-  JELLABA = 'jellaba',
-  KARAKOU = 'karakou',
-  GANDOURA = 'gandoura',
-  KESWA = 'keswa',
-  FOUTA = 'fouta',
-}
+export type DressType =
+  | 'caftan'
+  | 'takchita'
+  | 'jellaba'
+  | 'karakou'
+  | 'gandoura'
+  | 'keswa'
+  | 'fouta';
+
+export const DressType = {
+  CAFTAN: 'caftan' as const,
+  TAKCHITA: 'takchita' as const,
+  JELLABA: 'jellaba' as const,
+  KARAKOU: 'karakou' as const,
+  GANDOURA: 'gandoura' as const,
+  KESWA: 'keswa' as const,
+  FOUTA: 'fouta' as const,
+} as const;
 
 export interface Dress {
   id: string;
@@ -19,12 +28,19 @@ export interface Dress {
   createdAt: string;
 }
 
-export enum AppointmentStatus {
-  PENDING = 'pending',
-  CONFIRMED = 'confirmed',
-  CANCELLED = 'cancelled',
-  COMPLETED = 'completed',
-}
+export type AppointmentStatus =
+  | 'pending'
+  | 'confirmed'
+  | 'cancelled'
+  | 'completed';
+
+export const AppointmentStatus = {
+  PENDING: 'pending' as const,
+  CONFIRMED: 'confirmed' as const,
+  CANCELLED: 'cancelled' as const,
+  COMPLETED: 'completed' as const,
+} as const;
+
 
 export interface Appointment {
   id: string;

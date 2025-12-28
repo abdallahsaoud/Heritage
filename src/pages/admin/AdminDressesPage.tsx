@@ -28,7 +28,7 @@ export const AdminDressesPage: React.FC = () => {
   });
 
   const createMutation = useMutation({
-    mutationFn: (data: CreateDressDto) => dressesService.create(data),
+    mutationFn: () => dressesService.create(),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['dresses'] });
       handleCloseModal();
@@ -36,8 +36,8 @@ export const AdminDressesPage: React.FC = () => {
   });
 
   const updateMutation = useMutation({
-    mutationFn: ({ id, data }: { id: string; data: Partial<CreateDressDto> }) =>
-      dressesService.update(id, data),
+    mutationFn: () =>
+      dressesService.update(),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['dresses'] });
       handleCloseModal();
@@ -45,7 +45,7 @@ export const AdminDressesPage: React.FC = () => {
   });
 
   const deleteMutation = useMutation({
-    mutationFn: (id: string) => dressesService.delete(id),
+    mutationFn: () => dressesService.delete(),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['dresses'] });
     },
@@ -89,18 +89,15 @@ export const AdminDressesPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (editingDress) {
-      updateMutation.mutate({
-        id: editingDress.id,
-        data: formData as CreateDressDto,
-      });
+      updateMutation.mutate();
     } else {
-      createMutation.mutate(formData as CreateDressDto);
+      createMutation.mutate();
     }
   };
 
-  const handleDelete = (id: string) => {
+  const handleDelete = () => {
     if (window.confirm('Êtes-vous sûr de vouloir supprimer cette robe ?')) {
-      deleteMutation.mutate(id);
+      deleteMutation.mutate();
     }
   };
 
@@ -155,7 +152,7 @@ export const AdminDressesPage: React.FC = () => {
                 </Button>
                 <Button
                   variant="secondary"
-                  onClick={() => handleDelete(dress.id)}
+                  onClick={() => handleDelete()}
                   className="flex-1"
                 >
                   Supprimer

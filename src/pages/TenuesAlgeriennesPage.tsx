@@ -30,7 +30,7 @@ export const TenuesAlgeriennesPage: React.FC = () => {
 
   // Filtrer pour ne garder que les tenues algériennes
   const algerianDresses = allDresses?.filter((dress) =>
-    algerianDressTypes.includes(dress.type)
+    algerianDressTypes.includes(dress.type as 'jellaba' | 'karakou' | 'gandoura' | 'keswa' | 'fouta')
   );
 
   // Appliquer le filtre de type sélectionné

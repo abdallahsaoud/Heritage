@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
-import photoPrincipal from '../Heritage-assets/accueil.webp';
-import karakouNoir from '../Heritage-assets/karakou-black.jpeg';
-import caftanBlanc from '../Heritage-assets/takchita-white.jpeg';
-import karakouNoir2 from '../Heritage-assets/caftan-purple-2.jpeg';
+import photoPrincipal from '../../public/assets/products/accueil.webp';
+import karakouNoir from '../../public/assets/products/karakou-black.jpeg';
+import caftanBlanc from '../../public/assets/products/takchita-white.jpeg';
+import karakouNoir2 from '../../public/assets/products/caftan-purple-2.jpeg';
 
 interface FAQItem {
   question: string;

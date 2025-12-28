@@ -14,7 +14,7 @@ const loadProducts = async (): Promise<Dress[]> => {
     if (!response.ok) {
       throw new Error('Failed to load products');
     }
-    productsCache = await response.json();
+    productsCache = await response.json() as Dress[];
     return productsCache;
   } catch (error) {
     console.error('Error loading products:', error);
