@@ -6,6 +6,7 @@ import { Button } from '../components/ui/Button';
 import { Loading } from '../components/ui/Loading';
 import { CardSkeleton } from '../components/ui/Loading';
 import { InfiniteHorizontalScroll } from '../components/ui/InfiniteHorizontalScroll';
+import { OptimizedImage } from '../components/ui/OptimizedImage';
 import { dressesService, getRelatedAccessories } from '../services/dresses.service';
 import { formatPrice } from '../utils/helpers';
 import type { Dress } from '../types/index';
@@ -122,10 +123,17 @@ export const DressDetailPage: React.FC = () => {
             <div className="flex flex-col">
               {/* Image principale pleine hauteur */}
               <div className="relative w-full aspect-[3/4] overflow-hidden mb-4 rounded-[4px]">
-                <img
+                <OptimizedImage
                   src={images[selectedImageIndex]}
                   alt={`${dress.name} - Image ${selectedImageIndex + 1}`}
-                  className="w-full h-full object-cover rounded-[4px]"
+                  className="rounded-[4px]"
+                  aspectRatio="3/4"
+                  objectFit="cover"
+                  priority={selectedImageIndex === 0}
+                  loading={selectedImageIndex === 0 ? 'eager' : 'lazy'}
+                  decoding={selectedImageIndex === 0 ? 'sync' : 'async'}
+                  useResponsive={true}
+                  sizes="(max-width: 1024px) 100vw, 900px"
                 />
               </div>
 
@@ -153,13 +161,16 @@ export const DressDetailPage: React.FC = () => {
                           }}
                         />
                       )}
-                      <img
-                        src={image}
+                      <OptimizedImage
+                        src={image.replace(/\.webp$/, '-thumb.webp')}
                         alt={`${dress.name} - Miniature ${index + 1}`}
-                        className="w-full h-full object-cover rounded-[8px]"
-                        style={{
-                          display: 'block',
-                        }}
+                        className="rounded-[8px]"
+                        width={112}
+                        height={112}
+                        aspectRatio="1/1"
+                        objectFit="cover"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </button>
                   ))}
@@ -255,13 +266,17 @@ export const DressDetailPage: React.FC = () => {
                   >
                     {/* Card avec photo pleine hauteur - même style que CataloguePage */}
                     <div className="relative w-full aspect-[3/4] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
-                      <img
+                      <OptimizedImage
                         src={item.data.imageUrl}
                         alt={item.data.name}
-                        className="w-full h-full object-cover"
+                        aspectRatio="3/4"
+                        objectFit="cover"
+                        loading="lazy"
+                        decoding="async"
+                        useResponsive={true}
                       />
                       {!item.data.available && (
-                        <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center">
+                        <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center pointer-events-none">
                           <span className="bg-red-500 text-white px-4 py-2 text-sm font-semibold">
                             Indisponible
                           </span>

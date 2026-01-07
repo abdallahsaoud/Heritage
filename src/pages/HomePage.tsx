@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
-import photoPrincipal from '../../public/assets/products/accueil.webp';
-import karakouNoir from '../../public/assets/products/karakou-black.webp';
-import caftanBlanc from '../../public/assets/products/takchita-white.webp';
-import karakouNoir2 from '../../public/assets/products/caftan-purple-2.webp';
+import { OptimizedImage } from '../components/ui/OptimizedImage';
 
 interface FAQItem {
   question: string;
@@ -44,10 +41,17 @@ export const HomePage: React.FC = () => {
         {/* Section 1: Image principale pleine largeur */}
         <section className="w-full m-0 p-0 block">
           <div className="relative h-[400px] md:h-[750px] w-full overflow-hidden m-0 p-0 block">
-            <img
-              src={photoPrincipal}
+            <OptimizedImage
+              src="/assets/products/accueil.webp"
               alt="Collection Héritage"
-              className="w-full h-full object-cover block m-0 p-0"
+              className="w-full h-full block m-0 p-0"
+              priority={true}
+              aspectRatio="16/9"
+              objectFit="cover"
+              loading="eager"
+              decoding="sync"
+              useResponsive={true}
+              sizes="(max-width: 768px) 100vw, 1920px"
               style={{ display: 'block', verticalAlign: 'top', margin: 0, padding: 0, width: '100%', height: '100%' }}
             />
           </div>
@@ -60,13 +64,18 @@ export const HomePage: React.FC = () => {
             className="relative cursor-pointer group overflow-hidden"
             onClick={() => navigate('/catalogue')}
           >
-            <img
-              src={caftanBlanc}
+            <OptimizedImage
+              src="/assets/products/takchita-white.webp"
               alt="Takchita"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="transition-transform duration-700 group-hover:scale-110"
+              aspectRatio="3/4"
+              objectFit="cover"
+              loading="lazy"
+              decoding="async"
+              useResponsive={true}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-            <div className="absolute bottom-6 left-6">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
+            <div className="absolute bottom-6 left-6 pointer-events-none">
               <p className="text-white text-xl font-light uppercase tracking-wider">takchita</p>
             </div>
           </div>
@@ -76,13 +85,18 @@ export const HomePage: React.FC = () => {
             className="relative cursor-pointer group overflow-hidden"
             onClick={() => navigate('/tenues-algeriennes')}
           >
-            <img
-              src={karakouNoir}
+            <OptimizedImage
+              src="/assets/products/karakou-black.webp"
               alt="Karakou"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="transition-transform duration-700 group-hover:scale-110"
+              aspectRatio="3/4"
+              objectFit="cover"
+              loading="lazy"
+              decoding="async"
+              useResponsive={true}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-            <div className="absolute bottom-6 left-6">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
+            <div className="absolute bottom-6 left-6 pointer-events-none">
               <p className="text-white text-xl font-light uppercase tracking-wider">Karakou</p>
             </div>
           </div>
@@ -92,13 +106,18 @@ export const HomePage: React.FC = () => {
             className="relative cursor-pointer group overflow-hidden"
             onClick={() => navigate('/catalogue')}
           >
-            <img
-              src={karakouNoir2}
+            <OptimizedImage
+              src="/assets/products/caftan-purple-2.webp"
               alt="Caftan"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              className="transition-transform duration-700 group-hover:scale-110"
+              aspectRatio="3/4"
+              objectFit="cover"
+              loading="lazy"
+              decoding="async"
+              useResponsive={true}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-            <div className="absolute bottom-6 left-6">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
+            <div className="absolute bottom-6 left-6 pointer-events-none">
               <p className="text-white text-xl font-light uppercase tracking-wider">Caftan</p>
             </div>
           </div>

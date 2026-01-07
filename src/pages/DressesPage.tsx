@@ -5,6 +5,7 @@ import { Layout } from '../components/layout/Layout';
 import { Card } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
 import { CardSkeleton } from '../components/ui/Loading';
+import { OptimizedImage } from '../components/ui/OptimizedImage';
 import { dressesService } from '../services/dresses.service';
 import { DressType } from '../types/index';
 import { formatPrice, getDressTypeName } from '../utils/helpers';
@@ -109,13 +110,18 @@ export const DressesPage: React.FC = () => {
                     onClick={() => navigate(`/robe/${dress.id}`, { state: { from: '/robes' } })}
                   >
                     <div className="relative">
-                      <img
+                      <OptimizedImage
                         src={dress.imageUrl}
                         alt={dress.name}
-                        className="w-full h-72 object-cover"
+                        className="h-72"
+                        aspectRatio="3/4"
+                        objectFit="cover"
+                        loading="lazy"
+                        decoding="async"
+                        useResponsive={true}
                       />
                       {!dress.available && (
-                        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center pointer-events-none">
                           <span className="badge bg-red-500 text-white text-lg">
                             Indisponible
                           </span>

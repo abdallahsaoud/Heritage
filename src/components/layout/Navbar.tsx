@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { OptimizedImage } from '../ui/OptimizedImage';
 import logo from '../../assets/logo.svg';
 
 export const Navbar: React.FC = () => {
@@ -33,10 +34,13 @@ export const Navbar: React.FC = () => {
 
             {/* Logo au centre */}
             <Link to="/" className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <img
+              <OptimizedImage
                 src={logo}
                 alt="HÉRITAGE"
                 className="h-20 md:h-28 w-auto object-contain"
+                priority={true}
+                loading="eager"
+                decoding="sync"
               />
             </Link>
 

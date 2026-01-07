@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import { CardSkeleton } from '../components/ui/Loading';
+import { OptimizedImage } from '../components/ui/OptimizedImage';
 import { dressesService } from '../services/dresses.service';
 import { DressType } from '../types/index';
 import { formatPrice } from '../utils/helpers';
@@ -58,13 +59,17 @@ export const TenuesAlgeriennesPage: React.FC = () => {
                 >
                   {/* Card avec photo pleine hauteur */}
                   <div className="relative w-full aspect-[3/4] overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
-                    <img
+                    <OptimizedImage
                       src={dress.imageUrl}
                       alt={dress.name}
-                      className="w-full h-full object-cover"
+                      aspectRatio="3/4"
+                      objectFit="cover"
+                      loading="lazy"
+                      decoding="async"
+                      useResponsive={true}
                     />
                     {!dress.available && (
-                      <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center">
+                      <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center pointer-events-none">
                         <span className="bg-red-500 text-white px-4 py-2 text-sm font-semibold">
                           Indisponible
                         </span>
