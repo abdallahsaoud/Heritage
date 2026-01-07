@@ -136,7 +136,7 @@ export const BookingPage: React.FC = () => {
                       }`}
                     ></div>
                     <p
-                      className={`text-sm mt-2 text-center ${
+                      className={`text-[13px] mt-2 text-center ${
                         step >= s ? 'text-black font-medium' : 'text-gray-500'
                       }`}
                     >
@@ -153,7 +153,7 @@ export const BookingPage: React.FC = () => {
               {/* Step 1: Client Info */}
               {step === 1 && (
                 <div className="animate-fade-in">
-                  <h2 className="text-2xl font-serif mb-6">
+                  <h2 className="text-xl font-serif mb-6">
                     Vos Informations
                   </h2>
                   <Input
@@ -195,7 +195,7 @@ export const BookingPage: React.FC = () => {
               {/* Step 2: Date & Time */}
               {step === 2 && (
                 <div className="animate-fade-in">
-                  <h2 className="text-2xl font-serif mb-6">
+                  <h2 className="text-xl font-serif mb-6">
                     Choisissez une Date et Heure
                   </h2>
                   <Input
@@ -209,7 +209,7 @@ export const BookingPage: React.FC = () => {
                     min={getMinDateTime()}
                   />
                   <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
-                    <p className="text-sm text-blue-800">
+                      <p className="text-[13px] text-blue-800">
                       <strong>Horaires d'ouverture:</strong>
                       <br />
                       Lundi - Samedi: 10h00 - 19h00
@@ -229,13 +229,13 @@ export const BookingPage: React.FC = () => {
               {/* Step 3: Dress Type & Notes */}
               {step === 3 && (
                 <div className="animate-fade-in">
-                  <h2 className="text-2xl font-serif mb-6">
+                  <h2 className="text-xl font-serif mb-6">
                     Type de Robe & Notes
                   </h2>
                   
                   {selectedDress ? (
                     <div className="bg-black bg-opacity-10 border border-black rounded-lg p-4 mb-6">
-                      <p className="text-sm text-gray-700">
+                      <p className="text-[13px] text-gray-700">
                         <strong>Robe présélectionnée:</strong>
                         <br />
                         {selectedDress.name} - {getDressTypeName(selectedDress.type)}
@@ -270,10 +270,10 @@ export const BookingPage: React.FC = () => {
 
                   {/* Récapitulatif */}
                   <div className="bg-gray-50 rounded-lg p-6 mb-6">
-                    <h3 className="font-semibold mb-4 text-lg">
+                    <h3 className="font-semibold mb-4 text-[15px]">
                       Récapitulatif
                     </h3>
-                    <div className="space-y-2 text-sm">
+                    <div className="space-y-2 text-[13px]">
                       <p>
                         <strong>Nom:</strong> {formData.clientName}
                       </p>
@@ -329,10 +329,10 @@ export const BookingPage: React.FC = () => {
                       />
                     </svg>
                   </div>
-                  <h2 className="text-3xl font-serif mb-4">
+                  <h2 className="text-xl font-serif mb-4">
                     Réservation Confirmée!
                   </h2>
-                  <p className="text-gray-600 mb-8">
+                  <p className="text-gray-600 mb-8 text-[13px]">
                     Votre rendez-vous a été enregistré avec succès. Vous
                     recevrez un email de confirmation à l'adresse{' '}
                     <strong>{formData.clientEmail}</strong>.

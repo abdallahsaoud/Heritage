@@ -11,7 +11,7 @@ export default {
         'burgundy-light': '#C01A14',
         'burgundy-dark': '#8B120E',
         black: '#000000',
-        white: '#E6E6E6',
+        white: '#FFFFFF',
       },
       fontFamily: {
         serif: ['Playfair Display', 'serif'],

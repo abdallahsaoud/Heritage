@@ -1,5 +1,7 @@
 import { DressType } from '../types/index';
 import type { Dress } from '../types/index';
+import type { Accessory } from '../types/index';
+import { accessoriesService } from './accessories.service';
 
 // Load products from static JSON file
 let productsCache: Dress[] | null = null;
@@ -20,6 +22,39 @@ const loadProducts = async (): Promise<Dress[]> => {
     console.error('Error loading products:', error);
     return [];
   }
+};
+
+// Helper function to get related accessories for a dress
+export const getRelatedAccessories = async (
+  dress: Dress,
+  minCount: number = 2
+): Promise<Accessory[]> => {
+  const allAccessories = await accessoriesService.getAll();
+  
+  // Get linked accessories by ID
+  const linkedAccessories: Accessory[] = [];
+  if (dress.relatedAccessories && dress.relatedAccessories.length > 0) {
+    for (const accessoryId of dress.relatedAccessories) {
+      const accessory = allAccessories.find((a) => a.id === accessoryId);
+      if (accessory && accessory.available) {
+        linkedAccessories.push(accessory);
+      }
+    }
+  }
+  
+  // If we don't have enough, add random available accessories
+  if (linkedAccessories.length < minCount) {
+    const availableAccessories = allAccessories.filter(
+      (a) => a.available && !linkedAccessories.find((la) => la.id === a.id)
+    );
+    
+    // Shuffle and take what we need
+    const shuffled = [...availableAccessories].sort(() => Math.random() - 0.5);
+    const needed = minCount - linkedAccessories.length;
+    linkedAccessories.push(...shuffled.slice(0, needed));
+  }
+  
+  return linkedAccessories.slice(0, 3); // Max 3 accessories
 };
 
 export const dressesService = {

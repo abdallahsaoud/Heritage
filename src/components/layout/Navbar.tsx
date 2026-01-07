@@ -36,16 +36,17 @@ export const Navbar: React.FC = () => {
               <img
                 src={logo}
                 alt="HÉRITAGE"
-                className="h-24 md:h-28 w-auto object-contain"
+                className="h-20 md:h-28 w-auto object-contain"
               />
             </Link>
 
             {/* Bouton Réserver un essayage à droite */}
             <button
               onClick={() => navigate('/contact')}
-              className="bg-black text-white px-4 md:px-6 py-2 text-xs md:text-sm hover:bg-gray-800 transition-colors font-medium uppercase tracking-wider rounded-[10px] z-10"
+              className="bg-black text-white px-3 md:px-6 py-1.5 md:py-2 text-[13px] hover:bg-gray-800 transition-colors font-medium uppercase tracking-wider rounded-[10px] z-10 whitespace-nowrap"
             >
-              Réserver un essayage
+              <span className="md:hidden">Essayage</span>
+              <span className="hidden md:inline">Réserver un essayage</span>
             </button>
           </div>
         </div>
@@ -95,35 +96,42 @@ export const Navbar: React.FC = () => {
           <nav className="space-y-6">
             <Link
               to="/"
-              className="block text-black hover:text-[#A81712] transition-colors text-sm font-light uppercase tracking-wider py-2"
+              className="block text-black hover:text-[#A81712] transition-colors text-[13px] font-light uppercase tracking-wider py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Accueil
             </Link>
             <Link
               to="/catalogue"
-              className="block text-black hover:text-[#A81712] transition-colors text-sm font-light uppercase tracking-wider py-2"
+              className="block text-black hover:text-[#A81712] transition-colors text-[13px] font-light uppercase tracking-wider py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Caftans - Takchitas
             </Link>
             <Link
               to="/tenues-algeriennes"
-              className="block text-black hover:text-[#A81712] transition-colors text-sm font-light uppercase tracking-wider py-2"
+              className="block text-black hover:text-[#A81712] transition-colors text-[13px] font-light uppercase tracking-wider py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Tenues algériennes
             </Link>
             <Link
+              to="/accessoires"
+              className="block text-black hover:text-[#A81712] transition-colors text-[13px] font-light uppercase tracking-wider py-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Accessoires
+            </Link>
+            <Link
               to="/contact"
-              className="block text-black hover:text-[#A81712] transition-colors text-sm font-light uppercase tracking-wider py-2"
+              className="block text-black hover:text-[#A81712] transition-colors text-[13px] font-light uppercase tracking-wider py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact
             </Link>
             <Link
               to="/notre-histoire"
-              className="block text-black hover:text-[#A81712] transition-colors text-sm font-light uppercase tracking-wider py-2"
+              className="block text-black hover:text-[#A81712] transition-colors text-[13px] font-light uppercase tracking-wider py-2"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Notre histoire

@@ -37,10 +37,10 @@ export const DressesPage: React.FC = () => {
     <Layout>
       <div className="py-12 bg-[#f6f4f0] min-h-screen">
         <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-serif text-center mb-4">
+          <h1 className="text-4xl font-serif text-center mb-4">
             Notre Collection
           </h1>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-[13px]">
             Explorez notre sélection de robes orientales traditionnelles et
             modernes.
           </p>
@@ -106,7 +106,7 @@ export const DressesPage: React.FC = () => {
                   <Card
                     key={dress.id}
                     className="overflow-hidden hover:scale-105 transition-transform cursor-pointer animate-fade-in"
-                    onClick={() => navigate(`/robe/${dress.id}`)}
+                    onClick={() => navigate(`/robe/${dress.id}`, { state: { from: '/robes' } })}
                   >
                     <div className="relative">
                       <img
@@ -129,12 +129,12 @@ export const DressesPage: React.FC = () => {
                       <h3 className="text-lg font-serif mt-1 mb-2">
                         {dress.name}
                       </h3>
-                      <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                      <p className="text-gray-600 text-[13px] mb-3 line-clamp-2">
                         {dress.description}
                       </p>
                       <div className="flex justify-between items-center">
-                        <span className="text-xl font-bold text-[#A81712]">
-                          {formatPrice(dress.price)}
+                        <span className="text-[15px] font-bold text-[#A81712]">
+                          {formatPrice(dress.rentalPrice)}
                         </span>
                         {dress.available && (
                           <Button
@@ -157,7 +157,7 @@ export const DressesPage: React.FC = () => {
             </>
           ) : (
             <div className="text-center py-12">
-              <p className="text-gray-600 text-xl">
+              <p className="text-gray-600 text-[13px]">
                 Aucune robe trouvée avec ces critères.
               </p>
             </div>

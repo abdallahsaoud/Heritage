@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import photoPrincipal from '../../public/assets/products/accueil.webp';
-import karakouNoir from '../../public/assets/products/karakou-black.jpeg';
-import caftanBlanc from '../../public/assets/products/takchita-white.jpeg';
-import karakouNoir2 from '../../public/assets/products/caftan-purple-2.jpeg';
+import karakouNoir from '../../public/assets/products/karakou-black.webp';
+import caftanBlanc from '../../public/assets/products/takchita-white.webp';
+import karakouNoir2 from '../../public/assets/products/caftan-purple-2.webp';
 
 interface FAQItem {
   question: string;
@@ -13,20 +13,20 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: 'Comment puis-je réserver un essayage ?',
-    answer: 'Vous pouvez réserver un essayage en vous rendant sur notre page Contact et en utilisant notre système de réservation Calendly. Vous pouvez également nous contacter directement par email ou téléphone pour convenir d\'un rendez-vous qui vous convient.',
+    question: 'Proposez-vous la location ou l’achat de tenues traditionnelles ?',
+    answer: 'Nous proposons les deux ! Vous pouvez choisir de louer une tenue traditionnelle pour une occasion ou d’en faire l’achat si vous souhaitez la conserver.',
   },
   {
     question: 'Quels sont les délais de location ?',
-    answer: 'La durée de location standard est de 3 jours. Pour les événements spéciaux, nous proposons également des locations sur mesure. N\'hésitez pas à nous contacter pour discuter de vos besoins spécifiques.',
+    answer: 'Vous pouvez réserver un essayage directement via notre calendrier en ligne (page Contact) ou nous écrire sur nos réseaux sociaux (Instagram, TikTok, Facebook) ou par email. Nous fixerons ensemble le créneau qui vous convient le mieux.',
   },
   {
-    question: 'Proposez-vous des retouches ?',
-    answer: 'Oui, nous proposons des retouches pour s\'assurer que votre tenue vous va parfaitement. Les retouches sont effectuées par nos artisans qualifiés et sont incluses dans le service de location. Veuillez nous informer de vos besoins lors de la réservation.',
+    question: 'Comment puis-je réserver un essayage ?',
+    answer: 'Vous pouvez réserver un essayage directement via notre calendrier en ligne (page Contact) ou nous écrire sur nos réseaux sociaux (Instagram, TikTok, Facebook) ou par email. Nous fixerons ensemble le créneau qui vous convient le mieux.',
   },
   {
-    question: 'Comment puis-je prendre soin de ma tenue pendant la location ?',
-    answer: 'Nous vous fournirons un guide de soins détaillé avec chaque location. En général, nous recommandons de suspendre la tenue sur un cintre adapté, d\'éviter les sources de chaleur directe, et de ne pas utiliser de produits de nettoyage à domicile. Le nettoyage professionnel est inclus dans le service.',
+    question: 'Proposez-vous les accessoires en location ?',
+    answer: 'Oui, nous proposons une option supplémentaire pour la location d’accessoires afin de compléter votre tenue. En revanche, les accessoires ne sont pas disponibles à la vente.',
   },
 ];
 
@@ -107,8 +107,8 @@ export const HomePage: React.FC = () => {
         {/* Section FAQ */}
         <section className="bg-[#f6f4f0] py-20">
           <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="text-4xl font-serif text-black mb-4 text-center">FAQ</h2>
-            <p className="text-gray-700 text-center mb-12 font-light">
+            <h2 className="text-xl font-serif text-black mb-4 text-center">FAQ</h2>
+            <p className="text-gray-700 text-center mb-12 font-light text-[13px]">
               Questions fréquemment posées
             </p>
             <div className="space-y-4">
@@ -117,9 +117,9 @@ export const HomePage: React.FC = () => {
                   key={index}
                   className="bg-white border border-gray-200 rounded-lg overflow-hidden transition-all duration-300"
                 >
-                  <button
+                 <button
                     onClick={() => toggleFAQ(index)}
-                    className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
+                    className="w-full px-6 py-4 text-left flex justify-between items-center transition-colors bg-[#FFFFFF] hover:bg-gray-50"
                   >
                     <span className="font-medium text-black pr-4">{faq.question}</span>
                     <svg
@@ -139,11 +139,11 @@ export const HomePage: React.FC = () => {
                     </svg>
                   </button>
                   <div
-                    className={`overflow-hidden transition-all duration-300 ${
+                    className={`overflow-hidden transition-all duration-300 bg-[#FFFFFF] ${
                       openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
-                    <div className="px-6 py-4 text-gray-700 border-t border-gray-100">
+                    <div className="px-6 py-4 text-gray-700 border-t border-gray-100 bg-[#FFFFFF] text-[15px]">
                       {faq.answer}
                     </div>
                   </div>

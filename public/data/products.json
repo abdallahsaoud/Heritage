@@ -1,153 +1,254 @@
 [
   {
-    "id": "caftan-black-dore",
-    "name": "Caftan Black Doré",
-    "type": "caftan",
-    "description": "Magnifique caftan traditionnel brodé à la main avec des motifs dorés. Parfait pour les mariages et occasions spéciales.",
-    "imageUrl": "/assets/products/caftan-black-dore.jpg",
-    "price": 1500,
-    "available": true,
-    "createdAt": "2024-01-01T00:00:00.000Z"
-  },
-  {
     "id": "takchita-white",
-    "name": "Takchita White",
+    "name": "SARAH",
     "type": "takchita",
-    "description": "Takchita en velours bordeaux avec ceinture dorée et broderies argentées. Élégance et raffinement garantis.",
-    "imageUrl": "/assets/products/takchita-white.jpeg",
-    "price": 2200,
+    "description": "Plongez dans l'élégance avec SARAH, une takchita blanche aux broderies ivoire d'une délicatesse remarquable.\nCette takchita est composée d'une robe principale blanche, d'une ceinture en satin doré ornée d'une broche centrale dorée et de manches satinées dorées à l'intérieur.\nCette création unique marie harmonieusement les codes traditionnels et contemporains de la mode orientale.\n\nParfaite pour vos fiançailles, un mariage intimiste ou pour briller en tant qu'invitée, cette takchita est une invitation à la féminité et à l'élégance orientale.",
+    "imageUrl": "/assets/products/takchita-white.webp",
+    "images": [
+      "/assets/products/takchita-white.webp",
+      "/assets/products/takchita-white-2.webp",
+      "/assets/products/takchita-white-3.webp",
+      "/assets/products/takchita-white-4.webp",
+      "/assets/products/takchita-white-5.webp"
+    ],
     "available": true,
-    "createdAt": "2024-01-01T00:00:00.000Z"
+    "relatedAccessories": [
+      "ceinture-doree-premium",
+      "sfifa-argentee-luxe"
+    ],
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "rentalPrice": 79.90,
+    "purchasePrice": 200,
+    "size": "36/40"
   },
   {
-    "id": "caftan-emeraude-moderne",
-    "name": "Caftan Émeraude Moderne",
+    "id": "caftan-emeraude",
+    "name": "SELMA",
     "type": "caftan",
-    "description": "Caftan moderne en soie verte émeraude avec des détails en perles. Design contemporain inspiré de la tradition.",
-    "imageUrl": "/assets/products/caftan-emeraude-moderne.jpg",
-    "price": 1800,
+    "description": "Découvrez le modèle SELMA, un caftan vert olive aux broderies florales et arabesques. \nCette tenue est constituée d'une robe vert olive, d'un col officier brodé, d'une ceinture satinée agrémentée d'une broche dorée et de perles rondes vertes intégrées aux motifs.\nCette pièce d'exception allie avec grâce l'authenticité traditionnelle et la modernité de la mode orientale.\n\nIdéale pour rayonner en tant qu'invitée lors d'un mariage, d'une fête ou d'une cérémonie, cette tenue sublime votre silhouette et incarne la simplicité orientale.",
+    "imageUrl": "/assets/products/caftan-emeraude.webp",
+    "images": [
+      "/assets/products/caftan-emeraude.webp",
+      "/assets/products/caftan-emeraude-2.webp",
+      "/assets/products/caftan-emeraude-3.webp",
+      "/assets/products/caftan-emeraude-4.webp"
+    ],
     "available": true,
-    "createdAt": "2024-01-01T00:00:00.000Z"
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "rentalPrice": 49.90,
+    "purchasePrice": 120,
+    "size": "36/40"
   },
   {
     "id": "karakou-black",
-    "name": "Karakou Black",
+    "name": "IMENE",
     "type": "karakou",
-    "description": "Karakou authentique en velours noir avec broderies dorées. Tenue emblématique algéroise.",
-    "imageUrl": "/assets/products/karakou-black.jpeg",
-    "price": 1600,
+    "description": "IMENE incarne l'élégance d'un karakou en velours noir aux broderies dorées.\nCette tenue se compose d'une veste en velours noir richement brodée de motifs dorés, d'un col montant travaillé, de manches longues aux broderies complexes, d'une jupe en satin noir et d'une ceinture en satin noir nouée avec élégance.\nCette pièce emblématique allie l'authenticité de la tradition algéroise à un raffinement contemporain.\n\nParfaite pour vos mariages, fiançailles, grandes fêtes ou cérémonies, cette tenue vous accompagnera lors de vos moments les plus précieux.",
+    "imageUrl": "/assets/products/karakou-black.webp",
+    "images": [
+      "/assets/products/karakou-black.webp",
+      "/assets/products/karakou-black-2.webp",
+      "/assets/products/karakou-black-3.webp",
+      "/assets/products/karakou-black-4.webp"
+    ],
     "available": true,
-    "createdAt": "2024-01-01T00:00:00.000Z"
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "rentalPrice": 69.90,
+    "purchasePrice": 140,
+    "size": "36/40"
   },
   {
-    "id": "jellaba-creme-elegante",
-    "name": "Jellaba Crème Élégante",
-    "type": "jellaba",
-    "description": "Jellaba en soie crème avec capuche brodée. Confort et élégance pour toutes occasions.",
-    "imageUrl": "/assets/products/jellaba-creme-elegante.jpg",
-    "price": 900,
-    "available": true,
-    "createdAt": "2024-01-01T00:00:00.000Z"
-  },
-  {
-    "id": "gandoura-blanche-traditionnelle",
-    "name": "Gandoura Blanche Traditionnelle",
-    "type": "gandoura",
-    "description": "Gandoura blanche en coton fin avec broderies argentées. Simplicité et raffinement.",
-    "imageUrl": "/assets/products/gandoura-blanche-traditionnelle.jpg",
-    "price": 750,
-    "available": true,
-    "createdAt": "2024-01-01T00:00:00.000Z"
-  },
-  {
-    "id": "takchita-rose-poudre",
-    "name": "Takchita Rose Poudré",
+    "id": "takchita-bleu",
+    "name": "NOOR",
     "type": "takchita",
-    "description": "Takchita romantique en rose poudré avec ceinture en cristaux. Parfaite pour les mariées modernes.",
-    "imageUrl": "/assets/products/takchita-rose-poudre.jpg",
-    "price": 2500,
+    "description": "Laissez-vous séduire par NOOR, une takchita en velours bleu nuit aux motifs léopard d'une élégance moderne.\nCette tenue se compose d'une robe longue en velours texturé, d'un décolleté en V bordé de sfifa bleu marine, de manches longues évasées et d'une ceinture large bleu marine.\nCette création contemporaine revisite les codes traditionnels avec audace et raffinement.\n\nIdéale pour rayonner en tant qu'invitée lors d'un mariage, d'une fête ou d'une cérémonie, cette takchita sublime votre silhouette avec modernité.",
+    "imageUrl": "/assets/products/takchita-bleu.webp",
+    "images": [
+      "/assets/products/takchita-bleu.webp",
+      "/assets/products/takchita-bleu-2.webp",
+      "/assets/products/takchita-bleu-3.webp",
+      "/assets/products/takchita-bleu-4.webp"
+    ],
     "available": true,
-    "createdAt": "2024-01-01T00:00:00.000Z"
+    "relatedAccessories": [
+      "ceinture-argentee-moderne",
+      "boucles-oreilles-cristaux"
+    ],
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "rentalPrice": 69.90,
+    "purchasePrice": 150,
+    "size": "38/42"
   },
   {
-    "id": "keswa-el-kbira-fassia",
-    "name": "Keswa El Kbira Fassia",
-    "type": "keswa",
-    "description": "Keswa traditionnelle de Fès en sept pièces. Ensemble complet pour mariée avec tous les accessoires.",
-    "imageUrl": "/assets/products/keswa-el-kbira-fassia.jpg",
-    "price": 3500,
-    "available": true,
-    "createdAt": "2024-01-01T00:00:00.000Z"
-  },
-  {
-    "id": "caftan-bleu-nuit-perle",
-    "name": "Caftan Bleu Nuit Perlé",
-    "type": "caftan",
-    "description": "Caftan en satin bleu marine décoré de perles et paillettes. Sophistication pour vos soirées.",
-    "imageUrl": "/assets/products/caftan-bleu-nuit-perle.jpg",
-    "price": 1700,
-    "available": true,
-    "createdAt": "2024-01-01T00:00:00.000Z"
-  },
-  {
-    "id": "fouta-mariage-luxe",
-    "name": "Fouta Mariage Luxe",
-    "type": "fouta",
-    "description": "Fouta de mariée richement décorée avec broderies dorées et argentées. Tradition tunisienne.",
-    "imageUrl": "/assets/products/fouta-mariage-luxe.jpg",
-    "price": 2800,
-    "available": true,
-    "createdAt": "2024-01-01T00:00:00.000Z"
-  },
-  {
-    "id": "karakou-velours-rouge",
-    "name": "Karakou Velours Rouge",
+    "id": "karakou-bordeaux",
+    "name": "LILA",
     "type": "karakou",
-    "description": "Karakou en velours rouge avec broderies dorées complexes. Chef-d'œuvre artisanal.",
-    "imageUrl": "/assets/products/karakou-velours-rouge.jpg",
-    "price": 1750,
+    "description": "Explorez LILA, un karakou en velours bordeaux profond aux broderies dorées et argentées d'une opulence remarquable.\nCette tenue se compose d'une veste en velours bordeaux richement brodée de motifs floraux et arabesques, incrustée de pierres précieuses aux couleurs chatoyantes (vert émeraude, rouge rubis, orange, cristaux transparents), d'un col montant brodé, de manches longues aux poignets ornés et d'une coupe cintrée qui s'évase élégamment. Le karakou est accompagné soit d'une jupe en satin blanc, soit d'une jupe en brocard, soit d'un pantalon en velours bordeaux assorti, ou encore d'un pantalon traditionnel en brocard rose parme.\nCe modèle traditionnel très chic, cousu main avec des matériaux et des pierres de qualité, incarne l'excellence de l'artisanat oriental.\n\nParfaite pour vos mariages, fiançailles, grandes fêtes ou cérémonies, cette pièce d'exception vous accompagnera lors de vos événements les plus prestigieux.",
+    "imageUrl": "/assets/products/karakou-bordeaux-3.webp",
+    "images": [
+      "/assets/products/karakou-bordeaux-3.webp",
+      "/assets/products/karakou-bordeaux-4.webp"
+    ],
     "available": true,
-    "createdAt": "2024-01-01T00:00:00.000Z"
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "rentalPrice": 179.90,
+    "purchasePrice": 700,
+    "size": "36/40"
   },
   {
-    "id": "caftan-blanc-mariee",
-    "name": "Caftan Blanc Mariée",
+    "id": "caftan-perle",
+    "name": "INES",
     "type": "caftan",
-    "description": "Caftan de mariée en blanc pur avec broderies argentées et cristaux Swarovski.",
-    "imageUrl": "/assets/products/caftan-blanc-mariee.jpg",
-    "price": 3200,
+    "description": "Admirez le modèle INES, un caftan blanc cassé aux broderies dorées d'une finesse exceptionnelle.\nCette tenue se compose d'une robe longue en tissu fluide, d'un décolleté en V brodé de motifs dorés complexes, de manches longues évasées aux poignets brodés avec intérieur en satin vert sauge, de broderies dorées verticales parsemées de petites perles vertes et blanches le long de l'ouverture centrale et d'une ceinture large en satin vert sauge agrémentée d'une broche dorée centrale ornée d'une grande pierre vert émeraude.\nCe modèle allie harmonieusement tradition et modernité pour un résultat raffiné.\n\nIdéale pour vos mariages, fiançailles, fêtes ou cérémonies, cette création vous accompagnera lors de vos moments les plus précieux.",
+    "imageUrl": "/assets/products/caftan-perle.webp",
+    "images": [
+      "/assets/products/caftan-perle.webp",
+      "/assets/products/caftan-perle-2.webp",
+      "/assets/products/caftan-perle-3.webp",
+      "/assets/products/caftan-perle-4.webp"
+    ],
     "available": true,
-    "createdAt": "2024-01-01T00:00:00.000Z"
+    "relatedAccessories": [
+      "diademe-perles-luxe",
+      "parure-complete-or",
+      "broche-cristaux-swarovski"
+    ],
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "rentalPrice": 49.90,
+    "purchasePrice": 120,
+    "size": "36/40"
   },
   {
-    "id": "takchita-champagne-luxe",
-    "name": "Takchita Champagne Luxe",
+    "id": "takchita-rouge",
+    "name": "MERYEM",
     "type": "takchita",
-    "description": "Takchita couleur champagne avec sfifa dorée et broderies fines. Luxe à l'état pur.",
-    "imageUrl": "/assets/products/takchita-champagne-luxe.jpg",
-    "price": 2400,
-    "available": false,
-    "createdAt": "2024-01-01T00:00:00.000Z"
-  },
-  {
-    "id": "jellaba-soie-corail",
-    "name": "Jellaba Soie Corail",
-    "type": "jellaba",
-    "description": "Jellaba en soie corail avec broderies ton sur ton. Fraîcheur et élégance estivale.",
-    "imageUrl": "/assets/products/jellaba-soie-corail.jpg",
-    "price": 1100,
+    "description": "Succombez à MERYEM, une takchita en velours bordeaux aux motifs en relief.\nCette tenue se compose d'une robe longue en velours texturé avec un motif léopard, d'un décolleté en V bordé de sfifa bordeaux et d'une ceinture large bordeaux uni. \nCette création allie élégance traditionnelle et modernité pour un résultat luxueux et sophistiqué.\n\nParfaite pour vos mariages, fiançailles, fêtes ou cérémonies, cette takchita vous accompagnera lors de vos occasions les plus précieuses.",
+    "imageUrl": "/assets/products/takchita-rouge.webp",
+    "images": [
+      "/assets/products/takchita-rouge.webp",
+      "/assets/products/takchita-rouge-2.webp",
+      "/assets/products/takchita-rouge-3.webp",
+      "/assets/products/takchita-rouge-4.webp"
+    ],
     "available": true,
-    "createdAt": "2024-01-01T00:00:00.000Z"
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "rentalPrice": 69.90,
+    "purchasePrice": 150,
+    "size": "36/40"
   },
   {
-    "id": "gandoura-vert-jade",
-    "name": "Gandoura Vert Jade",
+    "id": "karakou-bleu",
+    "name": "AMIRA",
+    "type": "karakou",
+    "description": "Découvrez AMIRA, un karakou en velours bleu pétrole profond aux broderies dorées d'une opulence remarquable.\nCette tenue se compose d'une veste en velours bleu pétrole richement brodée de motifs floraux et arabesques, rehaussée de perles dorées, de cristaux transparents et de pierres claires ou cuivrées, d'un décolleté rond brodé, d'une fermeture éclair frontale discrète, de manches longues aux poignets ornés de larges bandes brodées et d'une coupe cintrée qui s'évase élégamment. Le karakou est accompagné soit d'une jupe en satin blanc, soit d'une jupe en brocard, soit d'un pantalon en velours bleu pétrole assorti, ou encore d'un pantalon traditionnel en brocard rose parme.\nCe modèle traditionnel très chic, cousu main avec des matériaux et des pierres de qualité, incarne l'excellence de l'artisanat oriental.\n\nParfaite pour vos mariages, fiançailles, grandes fêtes ou cérémonies, cette pièce d'exception vous accompagnera lors de vos événements les plus prestigieux.",
+    "imageUrl": "/assets/products/karakou-bleu.webp",
+    "images": [
+      "/assets/products/karakou-bleu.webp",
+      "/assets/products/karakou-bleu-2.webp",
+      "/assets/products/karakou-bleu-3.webp",
+      "/assets/products/karakou-bleu-4.webp"
+    ],
+    "available": true,
+    "relatedAccessories": [
+      "ceinture-doree-premium",
+      "sfifa-argentee-luxe"
+    ],
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "rentalPrice": 149.90,
+    "purchasePrice": 500,
+    "size": "36/40"
+  },
+  {
+    "id": "caftan-purple",
+    "name": "REEM",
+    "type": "caftan",
+    "description": "Découvrez REEM, un caftan en mauve profond aux broderies denses d'une élégance raffinée.\nCette tenue se compose d'une robe longue en tissu fluide, d'un décolleté en V bordé de broderies et d'une ceinture large en tissu tressé mauve nouée à l'avant.\nCette création traditionnelle allie raffinement et élégance pour un résultat sophistiqué.\n\nIdéale pour vos mariages, fiançailles, fêtes ou cérémonies, cette tenue vous accompagnera lors de vos occasions les plus précieuses.",
+    "imageUrl": "/assets/products/caftan-purple.webp",
+    "images": [
+      "/assets/products/caftan-purple.webp",
+      "/assets/products/caftan-purple-2.webp",
+      "/assets/products/caftan-purple-3.webp",
+      "/assets/products/caftan-purple-4.webp",
+      "/assets/products/caftan-purple-5.webp",
+      "/assets/products/caftan-purple-6.webp"
+    ],
+    "available": true,
+    "relatedAccessories": [
+      "ceinture-doree-premium",
+      "sfifa-argentee-luxe"
+    ],
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "rentalPrice": 49.90,
+    "purchasePrice": 120,
+    "size": "36/38"
+  },
+  {
+    "id": "caftan-orange",
+    "name": "MINA",
+    "type": "caftan",
+    "description": "Découvrez le modèle MINA, un caftan en orange vif aux broderies dorées d'une élégance vibrante.\nCette tenue se compose d'une robe longue en tissu fluide avec intérieur satiné vert foncé, d'un décolleté en V bordé de broderies, d'une bande verticale ornée de motifs floraux et arabesques et d'une ceinture large assortie agrémentée d'une broche centrale dorée.\nCette création traditionnelle allie couleur vibrante et lignes épurées pour un résultat raffiné.\n\nIdéale pour vos mariages, fiançailles, fêtes ou cérémonies, cette tenue vous accompagnera lors de vos occasions les plus précieuses.",
+    "imageUrl": "/assets/products/caftan-orange.webp",
+    "images": [
+      "/assets/products/caftan-orange.webp",
+      "/assets/products/caftan-orange-2.webp",
+      "/assets/products/caftan-orange-3.webp",
+      "/assets/products/caftan-orange-4.webp",
+      "/assets/products/caftan-orange-5.webp"
+    ],
+    "available": true,
+    "relatedAccessories": [
+      "ceinture-doree-premium",
+      "sfifa-argentee-luxe"
+    ],
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "rentalPrice": 49.90,
+    "purchasePrice": 120,
+    "size": "36/40"
+  },
+  {
+    "id": "gandoura-constantinoise",
+    "name": "JENNAH",
     "type": "gandoura",
-    "description": "Gandoura en mousseline vert jade avec détails brodés. Légèreté et confort.",
-    "imageUrl": "/assets/products/gandoura-vert-jade.jpg",
-    "price": 850,
+    "description": "Succombez au modèle JENNAH, une gandoura constantinoise en velours bordeaux aux broderies dorées d'une opulence remarquable.\nCette tenue se compose d'une robe longue en velours bordeaux richement brodée de motifs floraux et arabesques, incrustée de pierres précieuses aux couleurs chatoyantes (rouge rubis, vert émeraude, cristaux), d'un décolleté orné de broderies denses, de manches courtes avec sous-manches en dentelle champagne et d'éléments pendants dorés.\nCette création traditionnelle constantinoise, cousue main avec des matériaux et des pierres de qualité, incarne l'excellence de l'artisanat oriental.\n\nParfaite pour vos mariages, fiançailles, grandes fêtes ou cérémonies, cette pièce d'exception vous accompagnera lors de vos événements les plus prestigieux.",
+    "imageUrl": "/assets/products/gandoura-constantinoise.webp",
+    "images": [
+      "/assets/products/gandoura-constantinoise.webp",
+      "/assets/products/gandoura-constantinoise-2.webp",
+      "/assets/products/gandoura-constantinoise-3.webp",
+      "/assets/products/gandoura-constantinoise-4.webp"
+    ],
     "available": true,
-    "createdAt": "2024-01-01T00:00:00.000Z"
+    "relatedAccessories": [
+      "ceinture-doree-premium",
+      "sfifa-argentee-luxe"
+    ],
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "rentalPrice": 129.90,
+    "purchasePrice": 350,
+    "size": "36/40"
+  },
+  {
+    "id": "caftan-sari-rose",
+    "name": "ESMA",
+    "type": "caftan",
+    "description": "Découvrez ESMA, un caftan sari blanc cassé aux motifs floraux multicolores d'une douceur raffinée.\nCette tenue se compose d'une robe longue en coupe sirène avec intérieur satiné blanc, entièrement recouverte de motifs floraux aux nuances de rose pâle et violet clair, d'un décolleté en V bordé de sfifa dorée, et d'une ceinture large en satin rose pâle nouée à la taille.\nCette création traditionnelle allie élégance et modernité pour un résultat délicat et sophistiqué.\n\nIdéale pour vos mariages, fiançailles, fêtes ou cérémonies, cette tenue vous accompagnera lors de vos occasions les plus précieuses.",
+    "imageUrl": "/assets/products/caftan-sari-rose.webp",
+    "images": [
+      "/assets/products/caftan-sari-rose.webp",
+      "/assets/products/caftan-sari-rose-2.webp",
+      "/assets/products/caftan-sari-rose-3.webp",
+      "/assets/products/caftan-sari-rose-4.webp",
+      "/assets/products/caftan-sari-rose-5.webp"
+    ],
+    "available": true,
+    "relatedAccessories": [
+      "ceinture-doree-premium",
+      "sfifa-argentee-luxe"
+    ],
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "rentalPrice": 129.90,
+    "purchasePrice": 380,
+    "size": "36/40"
   }
 ]
-

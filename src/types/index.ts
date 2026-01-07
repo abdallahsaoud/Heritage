@@ -23,9 +23,13 @@ export interface Dress {
   type: DressType;
   description: string;
   imageUrl: string;
-  price: number;
+  images?: string[]; // Tableau d'images pour la galerie
+  rentalPrice: number;
+  purchasePrice: number;
+  size?: string;
   available: boolean;
   createdAt: string;
+  relatedAccessories?: string[]; // IDs d'accessoires liés à cette robe
 }
 
 export type AppointmentStatus =
@@ -79,7 +83,8 @@ export interface CreateDressDto {
   type: DressType;
   description: string;
   imageUrl: string;
-  price: number;
+  rentalPrice: number;
+  purchasePrice: number;
 }
 
 export interface CreateAppointmentDto {
@@ -103,5 +108,16 @@ export interface AppointmentStatistics {
   cancelled: number;
   completed: number;
   today: number;
+}
+
+export interface Accessory {
+  id: string;
+  name: string;
+  type: string;
+  description: string;
+  imageUrl: string;
+  rentalPrice: number;
+  available: boolean;
+  createdAt: string;
 }
 

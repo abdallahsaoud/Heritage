@@ -8,26 +8,26 @@ export const NotreHistoirePage: React.FC = () => {
       <div className="py-12 bg-[#f6f4f0] min-h-screen">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl font-serif text-center mb-4">Notre Histoire</h1>
-            <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            <h1 className="text-4xl font-serif text-center mb-4">Notre Histoire</h1>
+            <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-[13px]">
               Découvrez l'histoire et les valeurs qui animent HÉRITAGE.
             </p>
 
             {/* Section principale */}
             <Card className="p-8 md:p-12 mb-8">
               <div className="prose prose-lg max-w-none">
-                <h2 className="text-3xl font-serif mb-6">L'Histoire d'HÉRITAGE</h2>
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <h2 className="text-xl font-serif mb-6">L'Histoire d'HÉRITAGE</h2>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
                   HÉRITAGE est née d'une passion profonde pour les traditions vestimentaires 
                   algériennes et marocaines, alliée à un désir de moderniser et de faire rayonner 
                   ces créations à travers le monde.
                 </p>
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
                   Fondée avec l'ambition de préserver l'artisanat traditionnel tout en l'adaptant 
                   aux goûts contemporains, notre maison s'est rapidement imposée comme une référence 
                   dans le domaine de la mode orientale de luxe.
                 </p>
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
                   Chaque pièce de notre collection est le fruit d'un savoir-faire ancestral, 
                   transmis de génération en génération, et rehaussé par des touches modernes 
                   qui font d'HÉRITAGE une marque unique et intemporelle.
@@ -40,7 +40,7 @@ export const NotreHistoirePage: React.FC = () => {
               <Card className="p-6">
                 <div className="text-4xl mb-4">🎨</div>
                 <h3 className="text-xl font-serif mb-3">Savoir-Faire Artisanal</h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-[13px]">
                   Chaque création est confectionnée avec un soin méticuleux, respectant les 
                   techniques traditionnelles tout en intégrant des finitions modernes.
                 </p>
@@ -48,7 +48,7 @@ export const NotreHistoirePage: React.FC = () => {
               <Card className="p-6">
                 <div className="text-4xl mb-4">✨</div>
                 <h3 className="text-xl font-serif mb-3">Excellence</h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-[13px]">
                   Nous sélectionnons uniquement les meilleurs tissus et matériaux pour garantir 
                   la qualité et la durabilité de nos créations.
                 </p>
@@ -56,7 +56,7 @@ export const NotreHistoirePage: React.FC = () => {
               <Card className="p-6">
                 <div className="text-4xl mb-4">🌍</div>
                 <h3 className="text-xl font-serif mb-3">Tradition & Modernité</h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-[13px]">
                   Nous créons un pont entre le patrimoine culturel et les tendances actuelles, 
                   offrant des pièces intemporelles et élégantes.
                 </p>
@@ -66,16 +66,16 @@ export const NotreHistoirePage: React.FC = () => {
             {/* Section Mission */}
             <Card className="p-8 md:p-12 mb-8">
               <div className="prose prose-lg max-w-none">
-                <h2 className="text-3xl font-serif mb-6">Notre Mission</h2>
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <h2 className="text-xl font-serif mb-6">Notre Mission</h2>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
                   Chez HÉRITAGE, nous croyons que chaque femme mérite de se sentir exceptionnelle. 
                   Notre mission est de créer des tenues qui célèbrent la beauté, l'élégance et 
                   la confiance en soi.
                 </p>
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
                   Nous nous engageons à :
                 </p>
-                <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
+                <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6 text-[15px]">
                   <li>Préserver et promouvoir les traditions vestimentaires algériennes et marocaines</li>
                   <li>Offrir une expérience client exceptionnelle, de la sélection à l'essayage</li>
                   <li>Respecter l'environnement en privilégiant des pratiques durables</li>
@@ -87,8 +87,8 @@ export const NotreHistoirePage: React.FC = () => {
             {/* Section Vision */}
             <Card className="p-8 md:p-12">
               <div className="prose prose-lg max-w-none">
-                <h2 className="text-3xl font-serif mb-6">Notre Vision</h2>
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <h2 className="text-xl font-serif mb-6">Notre Vision</h2>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
                   HÉRITAGE aspire à devenir la référence mondiale de la mode orientale de luxe, 
                   en créant un pont entre les cultures et en faisant rayonner la beauté et 
                   l'élégance des tenues traditionnelles sur la scène internationale.

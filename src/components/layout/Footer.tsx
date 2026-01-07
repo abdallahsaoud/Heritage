@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Mentions légales et conditions de vente */}
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
+          <div className="flex flex-wrap justify-center gap-4 text-[13px]">
             <Link
               to="/mentions-legales"
               className="text-gray-600 hover:text-[#A81712] transition-colors"

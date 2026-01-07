@@ -8,117 +8,169 @@ export const ConditionsVentePage: React.FC = () => {
       <div className="py-12 bg-[#f6f4f0] min-h-screen">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl font-serif text-center mb-4">Conditions de Vente</h1>
-            <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-              Conditions générales de location et de vente de HÉRITAGE
+            <h1 className="text-4xl font-serif text-center mb-4">Conditions de Vente</h1>
+            <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-[13px]">
+              Conditions Générales de Vente et de Location
             </p>
 
-            <Card className="p-8 md:p-12 mb-8">
+            <Card className="p-8 md:p-12 mb-8 bg-[#FFFFFF]">
               <div className="prose prose-lg max-w-none">
-                <h2 className="text-3xl font-serif mb-6">1. Objet</h2>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  Les présentes conditions générales de vente (CGV) régissent les relations contractuelles entre HÉRITAGE, ci-après dénommé "le Loueur", et toute personne physique ou morale effectuant une commande, ci-après dénommée "le Client".
-                </p>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  Toute commande implique l'acceptation sans réserve des présentes conditions générales de vente.
+                <h2 className="text-xl font-serif mb-6">1. Objet</h2>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  Les présentes Conditions Générales de Vente et de Location (CGVL) définissent les modalités de réservation, de paiement, de location et de restitution des articles proposés par HÉRITAGE, incluant les tenues traditionnelles et les accessoires.
                 </p>
 
-                <h2 className="text-3xl font-serif mb-6 mt-12">2. Services proposés</h2>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  HÉRITAGE propose la location de tenues traditionnelles (caftans, takchitas, karakous, jellabas, etc.) pour des événements spéciaux.
+                <div className="my-8 border-t border-gray-300"></div>
+
+                <h2 className="text-xl font-serif mb-6 mt-12">2. Contrat de location</h2>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  Toute location fait l'objet d'un contrat écrit signé entre HÉRITAGE et le client au moment du retrait de la tenue.
                 </p>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  Les services incluent :
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  Ce contrat précise les dates de location, les montants, les modalités de restitution et les conditions de caution.
                 </p>
-                <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6 ml-4">
-                  <li>La location de tenues pour une durée déterminée</li>
-                  <li>Les retouches nécessaires pour un ajustement parfait</li>
-                  <li>Le nettoyage professionnel avant et après la location</li>
-                  <li>Les conseils et l'accompagnement lors de l'essayage</li>
+
+                <div className="my-8 border-t border-gray-300"></div>
+
+                <h2 className="text-xl font-serif mb-6 mt-12">3. Réservation</h2>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  La réservation d'un article devient effective uniquement après le versement d'un acompte de 30 % du montant total de la location ou de l'achat.
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  Sans acompte, la tenue ne peut être bloquée ni garantie pour la date souhaitée.
+                </p>
+
+                <div className="my-8 border-t border-gray-300"></div>
+
+                <h2 className="text-xl font-serif mb-6 mt-12">4. Durée de location</h2>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  La durée standard de location est de 3 jours :
+                </p>
+                <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6 ml-4 text-[15px]">
+                  <li>Retrait le jeudi ou le vendredi,</li>
+                  <li>Retour le dimanche matin ou le lundi matin.</li>
+                </ul>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  <span className="font-semibold">⏰ Précision importante :</span>
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  Si la tenue est retirée le vendredi avant midi, elle doit être restituée au plus tard le lundi à la même heure (exemple : retirée à 11h → rendue lundi avant 11h).
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  Toute prolongation de la durée de location doit être validée à l'avance par la marque.
+                </p>
+
+                <div className="my-8 border-t border-gray-300"></div>
+
+                <h2 className="text-xl font-serif mb-6 mt-12">5. Retard de restitution</h2>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  Tout retard de restitution entraîne des pénalités :
+                </p>
+                <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6 ml-4 text-[15px]">
+                  <li>Un forfait journalier de retard peut être appliqué,</li>
+                  <li>Au-delà de 48 h de retard, la caution pourra être intégralement encaissée.</li>
                 </ul>
 
-                <h2 className="text-3xl font-serif mb-6 mt-12">3. Réservation et commande</h2>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  La réservation d'un essayage peut être effectuée via notre site internet, par téléphone ou par email. La réservation devient ferme après confirmation écrite de HÉRITAGE.
-                </p>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  Le Client s'engage à fournir des informations exactes et complètes lors de la réservation.
-                </p>
+                <div className="my-8 border-t border-gray-300"></div>
 
-                <h2 className="text-3xl font-serif mb-6 mt-12">4. Tarifs</h2>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  Les prix de location sont indiqués en euros, toutes taxes comprises (TTC). Les prix sont valables pour la durée indiquée sur le site au moment de la commande.
+                <h2 className="text-xl font-serif mb-6 mt-12">6. Caution et pièce d'identité</h2>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  Une caution est demandée pour chaque location, déposée :
                 </p>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  HÉRITAGE se réserve le droit de modifier ses prix à tout moment, étant toutefois entendu que le prix figurant au jour de la commande sera le seul applicable à l'acheteur pour cette commande.
-                </p>
-
-                <h2 className="text-3xl font-serif mb-6 mt-12">5. Paiement</h2>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  Le paiement s'effectue selon les modalités suivantes :
-                </p>
-                <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6 ml-4">
-                  <li>Un acompte de 50% est demandé lors de la réservation</li>
-                  <li>Le solde est à régler lors de la remise de la tenue</li>
-                  <li>Les moyens de paiement acceptés : carte bancaire, virement bancaire, espèces</li>
+                <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6 ml-4 text-[15px]">
+                  <li>par empreinte bancaire,</li>
+                  <li>ou en espèces.</li>
                 </ul>
-
-                <h2 className="text-3xl font-serif mb-6 mt-12">6. Durée de location</h2>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  La durée standard de location est de 3 jours. Des durées personnalisées peuvent être convenues lors de la réservation.
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  <span className="font-semibold">📄</span> Une photocopie d'une pièce d'identité valide du client est obligatoire pour toute location.
                 </p>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  Le délai de location commence à compter de la date de remise de la tenue au Client.
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  Aucun chèque n'est accepté.
                 </p>
-
-                <h2 className="text-3xl font-serif mb-6 mt-12">7. Retour et restitution</h2>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  Le Client s'engage à restituer la tenue dans l'état où il l'a reçue, dans les délais convenus.
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  La caution peut être :
                 </p>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  En cas de retard dans la restitution, des frais de location supplémentaires pourront être facturés.
-                </p>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  En cas de détérioration, de perte ou de vol de la tenue, le Client sera tenu de rembourser la valeur de remplacement de la tenue.
-                </p>
-
-                <h2 className="text-3xl font-serif mb-6 mt-12">8. Responsabilité</h2>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  Le Client est responsable de la tenue louée pendant toute la durée de la location. Il doit prendre toutes les précautions nécessaires pour éviter tout dommage.
-                </p>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  HÉRITAGE ne saurait être tenu responsable des dommages indirects résultant de l'utilisation de la tenue louée.
-                </p>
-
-                <h2 className="text-3xl font-serif mb-6 mt-12">9. Annulation</h2>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  En cas d'annulation par le Client :
-                </p>
-                <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6 ml-4">
-                  <li>Plus de 15 jours avant la date prévue : remboursement intégral de l'acompte</li>
-                  <li>Entre 8 et 15 jours avant : remboursement de 50% de l'acompte</li>
-                  <li>Moins de 8 jours avant : aucun remboursement</li>
+                <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6 ml-4 text-[15px]">
+                  <li>Partiellement retenue en cas de tache, déchirure ou dommage nécessitant une remise en état (pressing, couturière, etc.),</li>
+                  <li>Intégralement encaissée si la tenue ou les accessoires ne sont pas restitués, ou si l'article est rendu dans un état irrécupérable.</li>
                 </ul>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  En cas d'annulation par HÉRITAGE, l'intégralité des sommes versées sera remboursée au Client.
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  La décision du montant retenu est laissée à l'appréciation du vendeur.
                 </p>
 
-                <h2 className="text-3xl font-serif mb-6 mt-12">10. Droit de rétractation</h2>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  Conformément à la législation en vigueur, le Client dispose d'un délai de 14 jours à compter de la date de réservation pour exercer son droit de rétractation, sous réserve que la tenue n'ait pas encore été remise.
+                <div className="my-8 border-t border-gray-300"></div>
+
+                <h2 className="text-xl font-serif mb-6 mt-12">7. Entretien des tenues</h2>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  Le pressing est à la charge de HÉRITAGE.
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  Le client ne doit pas laver ou nettoyer la tenue lui-même, afin d'éviter toute détérioration.
                 </p>
 
-                <h2 className="text-3xl font-serif mb-6 mt-12">11. Litiges et médiation</h2>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  En cas de litige, le Client peut recourir à la médiation conventionnelle ou à tout autre mode alternatif de règlement des différends auquel les parties consentiraient.
+                <div className="my-8 border-t border-gray-300"></div>
+
+                <h2 className="text-xl font-serif mb-6 mt-12">8. Accessoires</h2>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  Les accessoires peuvent être loués en option, mais ne sont pas disponibles à la vente.
                 </p>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  À défaut de résolution amiable, le litige sera soumis aux tribunaux compétents du ressort du siège social de HÉRITAGE.
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  Ils sont soumis aux mêmes conditions de caution et de restitution que les tenues.
                 </p>
 
-                <h2 className="text-3xl font-serif mb-6 mt-12">12. Droit applicable</h2>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  Les présentes conditions générales de vente sont soumises au droit français. Tout litige relatif à leur interprétation et/ou à leur exécution relève des tribunaux français.
+                <div className="my-8 border-t border-gray-300"></div>
+
+                <h2 className="text-xl font-serif mb-6 mt-12">9. Paiement</h2>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  Les paiements sont acceptés :
+                </p>
+                <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6 ml-4 text-[15px]">
+                  <li>en espèces,</li>
+                  <li>par carte bancaire,</li>
+                  <li>ou via PayPal.</li>
+                </ul>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  Le solde est dû au moment du retrait de la tenue ou avant la remise de l'article.
+                </p>
+
+                <div className="my-8 border-t border-gray-300"></div>
+
+                <h2 className="text-xl font-serif mb-6 mt-12">10. Annulation</h2>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  En cas d'annulation par le client :
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  L'acompte versé n'est pas remboursable, sauf cas exceptionnel à l'appréciation de la marque.
+                </p>
+
+                <div className="my-8 border-t border-gray-300"></div>
+
+                <h2 className="text-xl font-serif mb-6 mt-12">11. Achat</h2>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  Pour tout achat d'une tenue, une facture sera transmise aux clients.
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  Aucun remboursement n'aura lieu après l'achat. Seuls les échanges sont autorisés dans un délai de 30 jours après l'achat, conformément à la législation en vigueur.
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  Les articles échangés doivent être dans leur état d'origine, non portés, non lavés et avec leurs étiquettes d'origine.
+                </p>
+
+                <div className="my-8 border-t border-gray-300"></div>
+
+                <h2 className="text-xl font-serif mb-6 mt-12">12. Responsabilité du client</h2>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  Le client est pleinement responsable des articles pendant toute la durée de la location.
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  Toute perte, vol ou détérioration engage sa responsabilité financière jusqu'à la valeur totale de remplacement de l'article.
+                </p>
+
+                <div className="my-8 border-t border-gray-300"></div>
+
+                <h2 className="text-xl font-serif mb-6 mt-12">13. Acceptation des conditions</h2>
+                <p className="text-gray-700 leading-relaxed mb-6 text-[15px]">
+                  La réservation d'un article et la signature du contrat de location impliquent l'acceptation pleine et entière des présentes Conditions Générales de Vente et de Location.
                 </p>
 
                 <div className="mt-12 pt-8 border-t border-gray-200">
@@ -134,4 +186,3 @@ export const ConditionsVentePage: React.FC = () => {
     </Layout>
   );
 };
-
