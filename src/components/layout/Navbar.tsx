@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { OptimizedImage } from '../ui/OptimizedImage';
 import logo from '../../assets/logo.svg';
+import { FEATURES } from '../../config/features';
 
 export const Navbar: React.FC = () => {
   const navigate = useNavigate();
@@ -47,7 +48,7 @@ export const Navbar: React.FC = () => {
             {/* Bouton Réserver un essayage à droite */}
             <button
               onClick={() => navigate('/contact')}
-              className="bg-black text-white px-3 md:px-6 py-1.5 md:py-2 text-[13px] hover:bg-gray-800 transition-colors font-medium uppercase tracking-wider rounded-[10px] z-10 whitespace-nowrap"
+              className="bg-black text-white px-2 md:px-6 py-1 md:py-2 text-[11px] md:text-[13px] hover:bg-gray-800 transition-colors font-medium uppercase tracking-wider rounded-none z-10 whitespace-nowrap"
             >
               <span className="md:hidden">Essayage</span>
               <span className="hidden md:inline">Réserver un essayage</span>
@@ -119,13 +120,15 @@ export const Navbar: React.FC = () => {
             >
               Tenues algériennes
             </Link>
-            <Link
-              to="/accessoires"
-              className="block text-black hover:text-[#A81712] transition-colors text-[13px] font-light uppercase tracking-wider py-2"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Accessoires
-            </Link>
+            {FEATURES.ACCESSORIES_ENABLED && (
+              <Link
+                to="/accessoires"
+                className="block text-black hover:text-[#A81712] transition-colors text-[13px] font-light uppercase tracking-wider py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Accessoires
+              </Link>
+            )}
             <Link
               to="/contact"
               className="block text-black hover:text-[#A81712] transition-colors text-[13px] font-light uppercase tracking-wider py-2"

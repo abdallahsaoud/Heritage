@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 // Components
@@ -17,6 +17,7 @@ import { ConditionsVentePage } from './pages/ConditionsVentePage';
 import { DressesPage } from './pages/DressesPage';
 import { DressDetailPage } from './pages/DressDetailPage';
 import { BookingPage } from './pages/BookingPage';
+import { FEATURES } from './config/features';
 
 // Create a client
 const queryClient = new QueryClient({
@@ -57,7 +58,12 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/catalogue" element={<CataloguePage />} />
           <Route path="/tenues-algeriennes" element={<TenuesAlgeriennesPage />} />
-          <Route path="/accessoires" element={<AccessoiresPage />} />
+          {/* Accessories route - conditionally enabled via feature flag */}
+          {FEATURES.ACCESSORIES_ENABLED ? (
+            <Route path="/accessoires" element={<AccessoiresPage />} />
+          ) : (
+            <Route path="/accessoires" element={<Navigate to="/" replace />} />
+          )}
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/notre-histoire" element={<NotreHistoirePage />} />
           <Route path="/mentions-legales" element={<MentionsLegalesPage />} />

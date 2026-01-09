@@ -10,7 +10,7 @@ export const ContactPage: React.FC = () => {
   const selectedDress = location.state?.selectedDress as Dress | undefined;
 
   // URL Calendly - À remplacer par votre URL Calendly réelle
-  const calendlyUrl = 'https://calendly.com/heritage-appointments'; // Exemple
+  const calendlyUrl = 'https://calendly.com/heritage-rdv'; // Exemple
 
   return (
     <Layout>
@@ -60,7 +60,7 @@ export const ContactPage: React.FC = () => {
               <h2 className="text-xl font-serif mb-6">Suivez-nous</h2>
               <div className="flex gap-4">
                 <a
-                  href="https://www.instagram.com/heritage"
+                  href="https://www.instagram.com/heritage.alg/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-12 h-12 bg-black text-white rounded-full hover:bg-[#A81712] transition-colors"
@@ -75,7 +75,7 @@ export const ContactPage: React.FC = () => {
                   </svg>
                 </a>
                 <a
-                  href="https://www.facebook.com/heritage"
+                  href="https://www.facebook.com/profile.php?id=61580527445389"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-12 h-12 bg-black text-white rounded-full hover:bg-[#A81712] transition-colors"
@@ -90,7 +90,7 @@ export const ContactPage: React.FC = () => {
                   </svg>
                 </a>
                 <a
-                  href="https://www.tiktok.com/@heritage"
+                  href="https://www.tiktok.com/@heritage.algg"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-12 h-12 bg-black text-white rounded-full hover:bg-[#A81712] transition-colors"
@@ -114,10 +114,10 @@ export const ContactPage: React.FC = () => {
                 <div>
                   <h3 className="font-semibold mb-2">Email</h3>
                   <a
-                    href="mailto:contact@heritage.com"
+                    href="mailto:heritage.bynedhal@gmail.com"
                     className="text-[#A81712] hover:underline"
                   >
-                    contact@heritage.com
+                    heritage.bynedhal@gmail.com
                   </a>
                 </div>
                 <div>

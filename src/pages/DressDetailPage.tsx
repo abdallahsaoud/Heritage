@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
@@ -9,14 +9,27 @@ import { InfiniteHorizontalScroll } from '../components/ui/InfiniteHorizontalScr
 import { OptimizedImage } from '../components/ui/OptimizedImage';
 import { dressesService, getRelatedAccessories } from '../services/dresses.service';
 import { formatPrice } from '../utils/helpers';
-import type { Dress } from '../types/index';
+import type { Dress, DressType } from '../types/index';
 import type { Accessory } from '../types/index';
+import { DressType as DressTypeConst } from '../types/index';
 
 export const DressDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const location = useLocation();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  
+  // Detect mobile screen size
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // Breakpoint md de Tailwind
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   // Get the previous path from location state or default to /robes
   const getBackPath = () => {
@@ -31,18 +44,59 @@ export const DressDetailPage: React.FC = () => {
     return '/robes'; // Default fallback
   };
 
-  const { data: dress, isLoading } = useQuery({
+  const { data: dress, isLoading, isError, error } = useQuery({
     queryKey: ['dress', id],
     queryFn: () => dressesService.getById(id!),
     enabled: !!id,
+    retry: false,
   });
 
-  // Get similar dresses (same type, exclude current)
-  const { data: similarDresses, isLoading: isLoadingSimilar } = useQuery({
-    queryKey: ['dresses', dress?.type],
-    queryFn: () => dressesService.getAll(dress?.type),
-    enabled: !!dress?.type,
+  // Get all dresses to filter by category
+  const { data: allDresses, isLoading: isLoadingSimilar } = useQuery({
+    queryKey: ['dresses'],
+    queryFn: () => dressesService.getAll(),
   });
+
+  // Determine category based on dress type
+  const getCategoryTypes = (dressType: DressType): DressType[] => {
+    // Tenues algériennes category
+    const algerianDressTypes: DressType[] = [
+      DressTypeConst.KARAKOU,
+      DressTypeConst.JELLABA,
+      DressTypeConst.GANDOURA,
+      DressTypeConst.KESWA,
+      DressTypeConst.FOUTA,
+    ];
+
+    // Caftan and Takchita category (they should be shown together)
+    const caftanTakchitaTypes: DressType[] = [
+      DressTypeConst.CAFTAN,
+      DressTypeConst.TAKCHITA,
+    ];
+
+    // If it's a tenue algérienne, return all tenues algériennes types
+    if (algerianDressTypes.includes(dressType)) {
+      return algerianDressTypes;
+    }
+
+    // If it's a caftan or takchita, return both types
+    if (caftanTakchitaTypes.includes(dressType)) {
+      return caftanTakchitaTypes;
+    }
+
+    // Fallback: return only the same type
+    return [dressType];
+  };
+
+  // Get similar dresses from the same category
+  const similarDresses = useMemo(() => {
+    if (!allDresses || !dress) return [];
+    
+    const categoryTypes = getCategoryTypes(dress.type);
+    return allDresses.filter((d) => 
+      categoryTypes.includes(d.type) && d.id !== dress.id
+    );
+  }, [allDresses, dress]);
 
   // Get related accessories
   const { data: relatedAccessories, isLoading: isLoadingAccessories } = useQuery({
@@ -55,24 +109,25 @@ export const DressDetailPage: React.FC = () => {
   const recommendations = useMemo(() => {
     const items: Array<{ type: 'dress' | 'accessory'; data: Dress | Accessory }> = [];
     
-    // Add similar dresses (max 3-4)
-    const filteredSimilar = similarDresses
-      ?.filter((d) => d.id !== dress?.id)
-      .slice(0, 4) || [];
+    // Add similar dresses from the same category (prioritize more products)
+    const filteredSimilar = similarDresses.slice(0, 6) || [];
     
     filteredSimilar.forEach(d => {
       items.push({ type: 'dress', data: d });
     });
     
-    // Add related accessories (max 2-3)
-    const accessories = relatedAccessories || [];
-    accessories.slice(0, 3).forEach(a => {
-      items.push({ type: 'accessory', data: a });
-    });
+    // Add related accessories only if we don't have enough dresses (max 2-3)
+    if (filteredSimilar.length < 4) {
+      const accessories = relatedAccessories || [];
+      const neededAccessories = Math.min(3, 4 - filteredSimilar.length);
+      accessories.slice(0, neededAccessories).forEach(a => {
+        items.push({ type: 'accessory', data: a });
+      });
+    }
     
     // Return items (first dresses, then accessories) limited to 6
     return items.slice(0, 6);
-  }, [similarDresses, relatedAccessories, dress?.id]);
+  }, [similarDresses, relatedAccessories]);
 
 
   // Préparer les images : utiliser images[] si disponible, sinon [imageUrl]
@@ -90,11 +145,20 @@ export const DressDetailPage: React.FC = () => {
     );
   }
 
-  if (!dress) {
+  if (isError || !dress) {
     return (
       <Layout>
         <div className="container mx-auto px-4 py-12 text-center">
-          <h1 className="text-4xl font-serif mb-4">Robe non trouvée</h1>
+          <h1 className="text-4xl font-serif mb-4">
+            {error?.message?.includes('not available') 
+              ? 'Robe indisponible' 
+              : 'Robe non trouvée'}
+          </h1>
+          <p className="text-gray-600 mb-6 text-[13px]">
+            {error?.message?.includes('not available')
+              ? 'Cette robe n\'est actuellement pas disponible.'
+              : 'La robe que vous recherchez n\'existe pas ou n\'est plus disponible.'}
+          </p>
           <Button onClick={() => navigate('/robes')}>
             Retour au catalogue
           </Button>
@@ -241,17 +305,17 @@ export const DressDetailPage: React.FC = () => {
           {/* Vous aimerez aussi */}
           {(isLoadingSimilar || isLoadingAccessories) ? (
             <div className="mt-16">
-              <h2 className="text-xl font-serif mb-8">Vous aimerez aussi</h2>
+              <h2 className="text-xl font-serif mb-8 text-center">Vous aimerez aussi</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                {[...Array(3)].map((_, i) => (
+                {[...Array(isMobile ? 1 : 3)].map((_, i) => (
                   <CardSkeleton key={i} />
                 ))}
               </div>
             </div>
           ) : recommendations.length > 0 ? (
             <div className="mt-16">
-              <h2 className="text-xl font-serif mb-8">Vous aimerez aussi</h2>
-              <InfiniteHorizontalScroll visibleItems={3}>
+              <h2 className="text-xl font-serif mb-8 text-center">Vous aimerez aussi</h2>
+              <InfiniteHorizontalScroll visibleItems={isMobile ? 1 : 3}>
                 {recommendations.map((item) => (
                   <div
                     key={item.data.id}

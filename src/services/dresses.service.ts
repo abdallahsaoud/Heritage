@@ -61,11 +61,14 @@ export const dressesService = {
   getAll: async (type?: DressType): Promise<Dress[]> => {
     const products = await loadProducts();
     
+    // Filter out unavailable products
+    const availableProducts = products.filter((product) => product.available);
+    
     if (!type) {
-      return products;
+      return availableProducts;
     }
     
-    return products.filter((product) => product.type === type);
+    return availableProducts.filter((product) => product.type === type);
   },
 
   getById: async (id: string): Promise<Dress> => {
@@ -74,6 +77,11 @@ export const dressesService = {
     
     if (!product) {
       throw new Error(`Product with id ${id} not found`);
+    }
+    
+    // Check if product is available
+    if (!product.available) {
+      throw new Error(`Product with id ${id} is not available`);
     }
     
     return product;

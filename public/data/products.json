@@ -241,7 +241,7 @@
       "/assets/products/caftan-sari-rose-4.webp",
       "/assets/products/caftan-sari-rose-5.webp"
     ],
-    "available": true,
+    "available": false,
     "relatedAccessories": [
       "ceinture-doree-premium",
       "sfifa-argentee-luxe"
