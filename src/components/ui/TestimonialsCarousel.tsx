@@ -8,20 +8,6 @@ interface TestimonialsCarouselProps {
   testimonials: Testimonial[];
 }
 
-// #region agent log helper
-const debugLog = (location: string, message: string, data: Record<string, unknown>, hypothesisId: string) => {
-  console.log(`[DEBUG ${hypothesisId}] ${location}: ${message}`, data);
-  fetch('http://127.0.0.1:7242/ingest/57a9a015-7cc8-42c4-bb2f-44b6d4bef37d',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location,message,data,timestamp:Date.now(),sessionId:'debug-session',hypothesisId})}).catch(()=>{});
-};
-
-// Error boundary helper - capture any errors
-if (typeof window !== 'undefined') {
-  window.addEventListener('error', (e) => {
-    console.error('[DEBUG ERROR] Global error caught:', e.message, e.filename, e.lineno);
-  });
-}
-// #endregion
-
 export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
   testimonials,
 }) => {
@@ -76,50 +62,23 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
   }, [visibleItems]);
 
   const scroll = useCallback((direction: 'left' | 'right') => {
-    // #region agent log
-    debugLog('TestimonialsCarousel:scroll', 'scroll called', {direction, currentIndex, totalItems, visibleItems, itemWidth}, 'A,B');
-    // #endregion
     if (totalItems <= visibleItems || itemWidth === 0) return;
     
     // Continue infinitely in the same direction (no modulo, just keep going)
     if (direction === 'right') {
-      setCurrentIndex((prev) => {
-        const newIndex = prev + 1;
-        // #region agent log
-        debugLog('TestimonialsCarousel:scroll:right', 'new index after right scroll', {prev, newIndex}, 'A');
-        // #endregion
-        return newIndex;
-      });
+      setCurrentIndex((prev) => prev + 1);
     } else {
-      setCurrentIndex((prev) => {
-        const newIndex = prev - 1;
-        // #region agent log
-        debugLog('TestimonialsCarousel:scroll:left', 'new index after left scroll', {prev, newIndex, willBeNegative: newIndex < 0}, 'A');
-        // #endregion
-        return newIndex;
-      });
+      setCurrentIndex((prev) => prev - 1);
     }
-  }, [totalItems, visibleItems, itemWidth, currentIndex]);
+  }, [totalItems, visibleItems, itemWidth]);
 
-  // Initialize scroll position
+  // Initialize scroll position - start at 0 to show the first item
   useEffect(() => {
-    // #region agent log
-    debugLog('TestimonialsCarousel:useEffect:init', 'initializing scroll position', {itemWidth, totalItems, willSetToZero: itemWidth > 0 && totalItems > 0}, 'H');
-    // #endregion
     if (itemWidth > 0 && totalItems > 0) {
+      // Reset to 0 ensures we start displaying from the first testimonial
       setCurrentIndex(0);
     }
   }, [itemWidth, totalItems]);
-
-  // #region agent log - Component mount tracking
-  useEffect(() => {
-    debugLog('TestimonialsCarousel:mount', 'component mounted', {
-      isMobile: typeof window !== 'undefined' ? window.innerWidth < 768 : 'unknown',
-      windowWidth: typeof window !== 'undefined' ? window.innerWidth : 'unknown',
-      userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : 'unknown',
-    }, 'F,H,I');
-  }, []);
-  // #endregion
 
   // If no scrolling needed, display normally
   if (totalItems <= visibleItems || itemWidth === 0) {
@@ -187,10 +146,9 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
   }
 
   // Generate duplicated items for infinite scrolling
-  // #region agent log - REDUCED from 100 to 5 copies for hypothesis G (performance on mobile)
-  const itemsToGenerate = totalItems * 5; // Reduced from 100 to 5 (30 items instead of 600)
-  debugLog('TestimonialsCarousel:generate', 'generating items', {itemsToGenerate, totalItems, multiplier: 5}, 'G');
-  // #endregion
+  // Optimized: Use 10 copies (60 items instead of 600) - enough for infinite scroll in both directions while keeping performance
+  // We need enough copies to handle negative indices when scrolling left from the start
+  const itemsToGenerate = totalItems * 10; // 10 copies provides enough range for negative indices
   const duplicatedItems: Testimonial[] = [];
   
   for (let i = 0; i < itemsToGenerate; i++) {
@@ -198,38 +156,22 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
     duplicatedItems.push(testimonials[actualItemIndex]);
   }
 
-  // Calculate translateX - currentIndex can be any integer (positive or negative)
-  // En mobile, ajouter un offset pour centrer la carte
-  const translateX = -(currentIndex * (itemWidth + 24)) + mobileOffset;
+  // Start from the middle of duplicated items to allow scrolling in both directions
+  // When currentIndex = 0, we want to show the first testimonial, which is at index baseOffset
+  const baseOffset = totalItems * 2; // Start from position that allows scrolling left
+  const displayIndex = currentIndex + baseOffset;
   
-  // #region agent log
-  debugLog('TestimonialsCarousel:render', 'render with values', {currentIndex, translateX, itemWidth, visibleItems, mobileOffset, totalItems, duplicatedItemsLength: duplicatedItems.length, isCurrentIndexNegative: currentIndex < 0}, 'A,B,C');
-  // #endregion
+  // Calculate translateX - ensures first item is visible when currentIndex = 0
+  // For mobile, add offset to center the card
+  // The formula: -displayIndex * (itemWidth + gap) shifts content left by displayIndex items
+  // Adding mobileOffset centers the visible card on mobile
+  const translateX = -(displayIndex * (itemWidth + 24)) + mobileOffset;
 
   return (
     <div className="relative">
       {/* Left arrow button */}
       <button
-        onClick={(e) => {
-          // #region agent log
-          debugLog('TestimonialsCarousel:leftButton:click', 'left button clicked', {
-            eventType: e.type,
-            isTrusted: e.isTrusted,
-            currentIndex,
-            timestamp: Date.now()
-          }, 'F');
-          // #endregion
-          scroll('left');
-        }}
-        onTouchEnd={(e) => {
-          // #region agent log
-          debugLog('TestimonialsCarousel:leftButton:touchEnd', 'left button touch end', {
-            eventType: e.type,
-            currentIndex,
-            timestamp: Date.now()
-          }, 'F');
-          // #endregion
-        }}
+        onClick={() => scroll('left')}
         className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-1.5 md:p-2 transition-all duration-200"
         aria-label="Témoignage précédent"
       >
@@ -267,14 +209,9 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
         >
           {duplicatedItems.map((testimonial, index) => {
             // Déterminer quelle carte est au centre
-            const centerIndex = currentIndex + Math.floor(visibleItems / 2);
+            // Use displayIndex to correctly identify the center card even with negative currentIndex
+            const centerIndex = displayIndex + Math.floor(visibleItems / 2);
             const isCenterCard = index === centerIndex;
-            
-            // #region agent log
-            if (index === 0 || index === centerIndex || !testimonial) {
-              debugLog('TestimonialsCarousel:map', 'item render check', {index, centerIndex, isCenterCard, testimonialExists: !!testimonial, testimonialId: testimonial?.id, currentIndex}, 'B,E');
-            }
-            // #endregion
 
             return (
               <div
@@ -303,7 +240,7 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
 
                   {/* Testimonial text */}
                   <p className="text-gray-700 text-sm md:text-[15px] leading-relaxed mb-6 flex-grow">
-                    {testimonial?.text || 'Loading...'}
+                    {testimonial.text}
                   </p>
 
                   {/* Divider */}
@@ -322,26 +259,7 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
 
       {/* Right arrow button */}
       <button
-        onClick={(e) => {
-          // #region agent log
-          debugLog('TestimonialsCarousel:rightButton:click', 'right button clicked', {
-            eventType: e.type,
-            isTrusted: e.isTrusted,
-            currentIndex,
-            timestamp: Date.now()
-          }, 'F');
-          // #endregion
-          scroll('right');
-        }}
-        onTouchEnd={(e) => {
-          // #region agent log
-          debugLog('TestimonialsCarousel:rightButton:touchEnd', 'right button touch end', {
-            eventType: e.type,
-            currentIndex,
-            timestamp: Date.now()
-          }, 'F');
-          // #endregion
-        }}
+        onClick={() => scroll('right')}
         className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-1.5 md:p-2 transition-all duration-200"
         aria-label="Témoignage suivant"
       >
