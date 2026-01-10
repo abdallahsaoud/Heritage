@@ -17,12 +17,7 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
   const [itemWidth, setItemWidth] = useState(0);
   const [visibleItems, setVisibleItems] = useState(3);
   const [mobileOffset, setMobileOffset] = useState(0);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-  const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const totalItems = testimonials.length;
-
-  // Minimum swipe distance (px)
-  const minSwipeDistance = 50;
 
   // Déterminer le nombre d'éléments visibles selon la taille de l'écran
   useEffect(() => {
@@ -66,57 +61,16 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
     return () => window.removeEventListener('resize', updateItemWidth);
   }, [visibleItems]);
 
-  const scroll = useCallback((direction: 'left' | 'right', e?: React.MouseEvent | React.TouchEvent) => {
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-    
+  const scroll = useCallback((direction: 'left' | 'right') => {
     if (totalItems <= visibleItems || itemWidth === 0) return;
     
-    // Continue infinitely in the same direction
+    // Continue infinitely in the same direction (no modulo, just keep going)
     if (direction === 'right') {
       setCurrentIndex((prev) => prev + 1);
     } else {
       setCurrentIndex((prev) => prev - 1);
     }
   }, [totalItems, visibleItems, itemWidth]);
-
-  // Touch handlers for swipe
-  const onTouchStart = (e: React.TouchEvent) => {
-    // Ignorer les touches sur les boutons
-    if ((e.target as HTMLElement).closest('button')) {
-      return;
-    }
-    setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const onTouchMove = (e: React.TouchEvent) => {
-    // Ignorer les touches sur les boutons
-    if ((e.target as HTMLElement).closest('button')) {
-      return;
-    }
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const onTouchEnd = (e: React.TouchEvent) => {
-    // Ignorer les touches sur les boutons
-    if ((e.target as HTMLElement).closest('button')) {
-      return;
-    }
-    if (!touchStart || !touchEnd) return;
-    
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > minSwipeDistance;
-    const isRightSwipe = distance < -minSwipeDistance;
-
-    if (isLeftSwipe) {
-      scroll('right');
-    } else if (isRightSwipe) {
-      scroll('left');
-    }
-  };
 
   // Initialize scroll position
   useEffect(() => {
@@ -207,21 +161,8 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
     <div className="relative">
       {/* Left arrow button */}
       <button
-        type="button"
-        onClick={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          scroll('left', e);
-        }}
-        onTouchStart={(e) => {
-          e.stopPropagation();
-        }}
-        onTouchEnd={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          scroll('left', e);
-        }}
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white shadow-lg rounded-full p-1.5 md:p-2 transition-all duration-200"
+        onClick={() => scroll('left')}
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-1.5 md:p-2 transition-all duration-200"
         aria-label="Témoignage précédent"
       >
         <svg
@@ -247,9 +188,6 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
         }}
-        onTouchStart={onTouchStart}
-        onTouchMove={onTouchMove}
-        onTouchEnd={onTouchEnd}
       >
         <div 
           ref={contentRef}
@@ -261,7 +199,6 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
         >
           {duplicatedItems.map((testimonial, index) => {
             // Déterminer quelle carte est au centre
-            // Pour un carousel infini, la carte centrale est celle à currentIndex + Math.floor(visibleItems / 2)
             const centerIndex = currentIndex + Math.floor(visibleItems / 2);
             const isCenterCard = index === centerIndex;
 
@@ -311,21 +248,8 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
 
       {/* Right arrow button */}
       <button
-        type="button"
-        onClick={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          scroll('right', e);
-        }}
-        onTouchStart={(e) => {
-          e.stopPropagation();
-        }}
-        onTouchEnd={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          scroll('right', e);
-        }}
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white shadow-lg rounded-full p-1.5 md:p-2 transition-all duration-200"
+        onClick={() => scroll('right')}
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-1.5 md:p-2 transition-all duration-200"
         aria-label="Témoignage suivant"
       >
         <svg
