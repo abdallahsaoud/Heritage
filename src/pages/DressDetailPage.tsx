@@ -249,15 +249,15 @@ export const DressDetailPage: React.FC = () => {
               {/* Prix Achat et Location */}
               <div className="flex items-center gap-6 mb-8">
                 <div>
-                  <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">Location</p>
-                  <p className="text-[15px] font-bold text-[#A81712]">
+                  <p className="text-[13px] text-black uppercase tracking-wide mb-1">Location</p>
+                  <p className="text-[20px] font-bold text-[#A81712]">
                     {formatPrice(dress.rentalPrice)}
                   </p>
                 </div>
-                <div className="h-12 w-px bg-gray-300"></div>
+                <div className="h-12 w-px bg-black"></div>
                 <div>
-                  <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">Achat</p>
-                  <p className="text-[15px] font-bold text-gray-900">
+                  <p className="text-[13px] text-black uppercase tracking-wide mb-1">Achat</p>
+                  <p className="text-[20px] font-bold text-gray-900">
                     {formatPrice(dress.purchasePrice)}
                   </p>
                 </div>
@@ -292,7 +292,7 @@ export const DressDetailPage: React.FC = () => {
                   }
                   className="w-full py-4 text-[13px] !rounded-none"
                 >
-                  Réserver un essayage
+                  RÉSERVER UN ESSAYAGE
                 </Button>
               ) : (
                 <Button variant="outline" disabled className="w-full py-4 text-[13px] !rounded-none">
@@ -358,23 +358,23 @@ export const DressDetailPage: React.FC = () => {
                       {item.type === 'dress' ? (
                         <div className="flex items-center justify-center gap-4 pt-2">
                           <div>
-                            <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">Location</p>
-                            <p className="text-[15px] font-bold text-[#A81712]">
+                            <p className="text-[13px] text-gray-500 uppercase tracking-wide mb-1">Location</p>
+                            <p className="text-[20px] font-bold text-[#A81712]">
                               {formatPrice((item.data as Dress).rentalPrice)}
                             </p>
                           </div>
                           <div className="h-8 w-px bg-gray-300"></div>
                           <div>
-                            <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">Achat</p>
-                            <p className="text-[15px] font-bold text-gray-900">
+                            <p className="text-[13px] text-gray-500 uppercase tracking-wide mb-1">Achat</p>
+                            <p className="text-[20px] font-bold text-gray-900">
                               {formatPrice((item.data as Dress).purchasePrice)}
                             </p>
                           </div>
                         </div>
                       ) : (
                         <div className="pt-2">
-                          <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">Location</p>
-                          <p className="text-[15px] font-bold text-[#A81712]">
+                          <p className="text-[13px] text-gray-500 uppercase tracking-wide mb-1">Location</p>
+                          <p className="text-[20px] font-bold text-[#A81712]">
                             {formatPrice((item.data as Accessory).rentalPrice)}
                           </p>
                         </div>

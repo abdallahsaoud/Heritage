@@ -17,14 +17,14 @@ export const Footer: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-4 text-[13px]">
             <Link
               to="/mentions-legales"
-              className="text-gray-600 hover:text-[#A81712] transition-colors"
+              className="text-black hover:text-[#A81712] transition-colors"
             >
               Mentions légales
             </Link>
-            <span className="text-gray-400">|</span>
+            <span className="text-black">|</span>
             <Link
               to="/conditions-vente"
-              className="text-gray-600 hover:text-[#A81712] transition-colors"
+              className="text-black hover:text-[#A81712] transition-colors"
             >
               Conditions de vente
             </Link>

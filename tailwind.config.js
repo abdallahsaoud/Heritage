@@ -14,8 +14,10 @@ export default {
         white: '#FFFFFF',
       },
       fontFamily: {
-        serif: ['Playfair Display', 'serif'],
-        sans: ['Open Sans', 'sans-serif'],
+        display: ['Noto Serif Display', 'serif'],
+        subtitle: ['Bodoni Moda', 'serif'],
+        serif: ['Bodoni Moda', 'serif'],
+        sans: ['ASAP', 'sans-serif'],
       },
     },
   },

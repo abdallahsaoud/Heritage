@@ -19,7 +19,7 @@ export const NotreHistoirePage: React.FC = () => {
                     <img
                       src="/assets/products/notre-histoire.webp"
                       alt="Notre Histoire - Héritage"
-                      className="w-full h-auto rounded-lg object-cover"
+                      className="w-full h-auto object-cover"
                       loading="eager"
                     />
                   </div>

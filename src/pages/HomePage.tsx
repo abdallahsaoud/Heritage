@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import { OptimizedImage } from '../components/ui/OptimizedImage';
+import { TestimonialsCarousel } from '../components/ui/TestimonialsCarousel';
+import { testimonials } from '../data/testimonials';
 
 interface FAQItem {
   question: string;
@@ -123,11 +125,23 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
+        {/* Section Testimonials */}
+        <section className="bg-[#f6f4f0] py-20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl md:text-3xl font-serif text-black mb-4">
+                Ce que disent nos clients
+              </h2>
+            </div>
+            <TestimonialsCarousel testimonials={testimonials} />
+          </div>
+        </section>
+
         {/* Section FAQ */}
         <section className="bg-[#f6f4f0] py-20">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-xl font-serif text-black mb-4 text-center">FAQ</h2>
-            <p className="text-gray-700 text-center mb-12 font-light text-[13px]">
+            <p className="text-black text-center mb-12 font-light text-[13px]">
               Questions fréquemment posées
             </p>
             <div className="space-y-4">
