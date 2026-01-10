@@ -16,6 +16,7 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemWidth, setItemWidth] = useState(0);
   const [visibleItems, setVisibleItems] = useState(3);
+  const [mobileOffset, setMobileOffset] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const totalItems = testimonials.length;
@@ -44,7 +45,18 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
       if (scrollContainerRef.current) {
         const containerWidth = scrollContainerRef.current.clientWidth;
         const gap = 24; // gap-6 = 24px
-        const calculatedWidth = (containerWidth - (gap * (visibleItems - 1))) / visibleItems;
+        const isMobile = window.innerWidth < 768;
+        let calculatedWidth = (containerWidth - (gap * (visibleItems - 1))) / visibleItems;
+        
+        // En mobile, limiter la largeur des cartes à 85% de la largeur disponible
+        if (isMobile) {
+          calculatedWidth = containerWidth * 0.85;
+          // Calculer l'offset pour centrer la carte
+          setMobileOffset((containerWidth - calculatedWidth) / 2);
+        } else {
+          setMobileOffset(0);
+        }
+        
         setItemWidth(calculatedWidth);
       }
     };
@@ -104,7 +116,12 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
           ref={scrollContainerRef}
           className="overflow-hidden"
         >
-          <div className="flex gap-6">
+          <div 
+            className="flex gap-6"
+            style={{
+              paddingLeft: mobileOffset > 0 ? `${mobileOffset}px` : '0',
+            }}
+          >
             {testimonials.map((testimonial, index) => {
               const isCenter = visibleItems === 3 && index === 1;
               const isMobileCenter = visibleItems === 1 && index === 0;
@@ -166,7 +183,8 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
   }
 
   // Calculate translateX - currentIndex can be any integer (positive or negative)
-  const translateX = -(currentIndex * (itemWidth + 24));
+  // En mobile, ajouter un offset pour centrer la carte
+  const translateX = -(currentIndex * (itemWidth + 24)) + mobileOffset;
 
   return (
     <div className="relative">
