@@ -67,7 +67,7 @@ export const DressesPage: React.FC = () => {
                   className={`px-4 py-2 rounded-[10px] transition-colors ${
                     !selectedType
                       ? 'bg-black text-white'
-                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                      : 'bg-gray-200 text-black hover:bg-gray-300'
                   }`}
                 >
                   Toutes
@@ -79,7 +79,7 @@ export const DressesPage: React.FC = () => {
                     className={`px-4 py-2 rounded-[10px] transition-colors ${
                       selectedType === type
                         ? 'bg-black text-white'
-                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                        : 'bg-gray-200 text-black hover:bg-gray-300'
                     }`}
                   >
                     {getDressTypeName(type)}

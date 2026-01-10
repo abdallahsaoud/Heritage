@@ -24,7 +24,7 @@ export const ContactPage: React.FC = () => {
           {selectedDress && (
             <div className="max-w-4xl mx-auto mb-8">
               <Card className="p-6 bg-black bg-opacity-10 border border-black">
-                <p className="text-[13px] text-gray-700">
+                <p className="text-[13px] text-black">
                   <strong>Robe présélectionnée:</strong> {selectedDress.name} -{' '}
                   {getDressTypeName(selectedDress.type)}
                 </p>

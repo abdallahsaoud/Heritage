@@ -176,7 +176,7 @@ export const HomePage: React.FC = () => {
                       openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
-                    <div className="px-6 py-4 text-gray-700 border-t border-gray-100 bg-[#FFFFFF] text-[15px]">
+                    <div className="px-6 py-4 text-black border-t border-gray-100 bg-[#FFFFFF] text-[15px]">
                       {faq.answer}
                     </div>
                   </div>

@@ -235,7 +235,7 @@ export const BookingPage: React.FC = () => {
                   
                   {selectedDress ? (
                     <div className="bg-black bg-opacity-10 border border-black rounded-lg p-4 mb-6">
-                      <p className="text-[13px] text-gray-700">
+                      <p className="text-[13px] text-black">
                         <strong>Robe présélectionnée:</strong>
                         <br />
                         {selectedDress.name} - {getDressTypeName(selectedDress.type)}

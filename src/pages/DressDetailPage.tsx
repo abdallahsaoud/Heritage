@@ -264,7 +264,7 @@ export const DressDetailPage: React.FC = () => {
               </div>
 
               <div className="prose prose-lg mb-8">
-                <p className="text-gray-700 leading-relaxed text-[15px] whitespace-pre-line">
+                <p className="text-black leading-relaxed text-[15px] whitespace-pre-line">
                   {dress.description}
                 </p>
               </div>

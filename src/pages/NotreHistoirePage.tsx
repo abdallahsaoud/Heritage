@@ -34,31 +34,31 @@ export const NotreHistoirePage: React.FC = () => {
                       Notre histoire, c'est celle d'une passion devenue projet.
                     </p>
 
-                    <p className="text-gray-700 leading-relaxed text-[15px] md:text-[16px]">
+                    <p className="text-black leading-relaxed text-[15px] md:text-[16px]">
                       Tout est parti d'une envie simple : permettre à chaque femme de se sentir belle dans une tenue traditionnelle, sans se ruiner et sans stress.
                     </p>
 
-                    <p className="text-gray-700 leading-relaxed text-[15px] md:text-[16px]">
+                    <p className="text-black leading-relaxed text-[15px] md:text-[16px]">
                       Chez Héritage, on croit que les tenues traditionnelles sont bien plus que des vêtements : ce sont des symboles de fierté, d'élégance et d'identité.
                     </p>
 
-                    <p className="text-gray-700 leading-relaxed text-[15px] md:text-[16px]">
+                    <p className="text-black leading-relaxed text-[15px] md:text-[16px]">
                       Chaque modèle est sélectionné avec soin pour la qualité du tissu, la finesse des broderies et le confort de la coupe.
                     </p>
 
-                    <p className="text-gray-700 leading-relaxed text-[15px] md:text-[16px]">
+                    <p className="text-black leading-relaxed text-[15px] md:text-[16px]">
                       Nous travaillons avec passion pour proposer des tenues adaptées à toutes, qu'elles soient voilées ou non, avec plusieurs options pour s'ajuster à chaque style et morphologie.
                     </p>
 
-                    <p className="text-gray-700 leading-relaxed text-[15px] md:text-[16px]">
+                    <p className="text-black leading-relaxed text-[15px] md:text-[16px]">
                       Nous proposons la location et la vente pour que chacune puisse trouver la formule qui lui correspond : Porter une robe unique le temps d'un événement, ou la garder pour toujours.
                     </p>
 
-                    <p className="text-gray-700 leading-relaxed text-[15px] md:text-[16px]">
+                    <p className="text-black leading-relaxed text-[15px] md:text-[16px]">
                       Pour vous faciliter la tâche, on vous propose directement les accessoires qui vont avec !
                     </p>
 
-                    <p className="text-gray-700 leading-relaxed text-[15px] md:text-[16px] font-medium">
+                    <p className="text-black leading-relaxed text-[15px] md:text-[16px] font-medium">
                       Qu'il s'agisse de tes fiançailles, de ton mariage ou d'un événement auquel tu es invitée, nous avons ce qu'il te faut !
                     </p>
                   </div>

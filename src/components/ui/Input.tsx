@@ -14,7 +14,7 @@ export const Input: React.FC<InputProps> = ({
   return (
     <div className="mb-4">
       {label && (
-        <label className="block text-[13px] font-medium text-gray-700 mb-2">
+        <label className="block text-[13px] font-medium text-black mb-2">
           {label}
         </label>
       )}
@@ -23,7 +23,7 @@ export const Input: React.FC<InputProps> = ({
         {...props}
       />
       {error && <p className="mt-1 text-[13px] text-red-600">{error}</p>}
-    </div>
+    </div>      
   );
 };
 
@@ -41,7 +41,7 @@ export const Textarea: React.FC<TextareaProps> = ({
   return (
     <div className="mb-4">
       {label && (
-        <label className="block text-[13px] font-medium text-gray-700 mb-2">
+        <label className="block text-[13px] font-medium text-black mb-2">
           {label}
         </label>
       )}
@@ -71,7 +71,7 @@ export const Select: React.FC<SelectProps> = ({
   return (
     <div className="mb-4">
       {label && (
-        <label className="block text-[13px] font-medium text-gray-700 mb-2">
+        <label className="block text-[13px] font-medium text-black mb-2">
           {label}
         </label>
       )}

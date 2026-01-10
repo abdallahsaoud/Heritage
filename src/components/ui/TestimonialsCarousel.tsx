@@ -124,7 +124,7 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
                     </div>
 
                     {/* Testimonial text */}
-                    <p className="text-gray-700 text-sm md:text-[15px] leading-relaxed mb-6 flex-grow">
+                    <p className="text-black text-sm md:text-[15px] leading-relaxed mb-6 flex-grow">
                       {testimonial.text}
                     </p>
 
@@ -176,7 +176,7 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
         aria-label="Témoignage précédent"
       >
         <svg
-          className="w-4 h-4 md:w-6 md:h-6 text-gray-700"
+          className="w-4 h-4 md:w-6 md:h-6 text-black"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -239,7 +239,7 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
                   </div>
 
                   {/* Testimonial text */}
-                  <p className="text-gray-700 text-sm md:text-[15px] leading-relaxed mb-6 flex-grow">
+                  <p className="text-black text-sm md:text-[15px] leading-relaxed mb-6 flex-grow">
                     {testimonial.text}
                   </p>
 
@@ -264,7 +264,7 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
         aria-label="Témoignage suivant"
       >
         <svg
-          className="w-4 h-4 md:w-6 md:h-6 text-gray-700"
+          className="w-4 h-4 md:w-6 md:h-6 text-black"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
