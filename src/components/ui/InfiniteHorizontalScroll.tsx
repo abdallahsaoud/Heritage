@@ -11,6 +11,7 @@ export const InfiniteHorizontalScroll: React.FC<InfiniteHorizontalScrollProps> =
   className = '',
   visibleItems = 3,
 }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -21,17 +22,25 @@ export const InfiniteHorizontalScroll: React.FC<InfiniteHorizontalScrollProps> =
   // Calculate item width based on container
   useEffect(() => {
     const updateItemWidth = () => {
-      if (scrollContainerRef.current) {
-        const containerWidth = scrollContainerRef.current.clientWidth;
+      // Use scrollContainerRef when available (after render), otherwise containerRef
+      const container = scrollContainerRef.current || containerRef.current;
+      if (container) {
+        // clientWidth already excludes padding, so we get the correct available width
+        const availableWidth = container.clientWidth;
         const gap = 24; // gap-6 = 24px
-        const calculatedWidth = (containerWidth - (gap * (visibleItems - 1))) / visibleItems;
-        setItemWidth(calculatedWidth);
+        const calculatedWidth = (availableWidth - (gap * (visibleItems - 1))) / visibleItems;
+        setItemWidth(Math.max(0, calculatedWidth)); // Ensure non-negative
       }
     };
 
+    // Small delay to ensure container is rendered with padding
+    const timeoutId = setTimeout(updateItemWidth, 0);
     updateItemWidth();
     window.addEventListener('resize', updateItemWidth);
-    return () => window.removeEventListener('resize', updateItemWidth);
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('resize', updateItemWidth);
+    };
   }, [visibleItems]);
 
   const scroll = useCallback((direction: 'left' | 'right') => {
@@ -52,10 +61,10 @@ export const InfiniteHorizontalScroll: React.FC<InfiniteHorizontalScrollProps> =
     }
   }, [itemWidth, totalItems]);
 
-  // If no scrolling needed, display normally
+  // If no scrolling needed, display normally (no padding needed as there are no navigation buttons)
   if (totalItems <= visibleItems || itemWidth === 0) {
     return (
-      <div className={`relative ${className}`}>
+      <div ref={containerRef} className={`relative ${className}`}>
         <div
           ref={scrollContainerRef}
           className="overflow-hidden"
@@ -93,11 +102,11 @@ export const InfiniteHorizontalScroll: React.FC<InfiniteHorizontalScrollProps> =
   const translateX = -(currentIndex * (itemWidth + 24));
 
   return (
-    <div className={`relative ${className}`}>
+    <div ref={containerRef} className={`relative ${className} px-12 md:px-0`}>
       {/* Left arrow button */}
       <button
         onClick={() => scroll('left')}
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-200"
+        className="absolute left-0 md:left-[-16px] top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-200"
         aria-label="Scroll left"
       >
         <svg
@@ -149,7 +158,7 @@ export const InfiniteHorizontalScroll: React.FC<InfiniteHorizontalScrollProps> =
       {/* Right arrow button */}
       <button
         onClick={() => scroll('right')}
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-200"
+        className="absolute right-0 md:right-[-16px] top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-200"
         aria-label="Scroll right"
       >
         <svg
