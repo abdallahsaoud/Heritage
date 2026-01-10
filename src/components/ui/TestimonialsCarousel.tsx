@@ -48,9 +48,9 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
         const isMobile = window.innerWidth < 768;
         let calculatedWidth = (containerWidth - (gap * (visibleItems - 1))) / visibleItems;
         
-        // En mobile, limiter la largeur des cartes à 85% de la largeur disponible
+        // En mobile, limiter la largeur des cartes à 75% de la largeur disponible
         if (isMobile) {
-          calculatedWidth = containerWidth * 0.85;
+          calculatedWidth = containerWidth * 0.75;
           // Calculer l'offset pour centrer la carte
           setMobileOffset((containerWidth - calculatedWidth) / 2);
         } else {
@@ -66,7 +66,12 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
     return () => window.removeEventListener('resize', updateItemWidth);
   }, [visibleItems]);
 
-  const scroll = useCallback((direction: 'left' | 'right') => {
+  const scroll = useCallback((direction: 'left' | 'right', e?: React.MouseEvent | React.TouchEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    
     if (totalItems <= visibleItems || itemWidth === 0) return;
     
     // Continue infinitely in the same direction
@@ -79,15 +84,27 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
 
   // Touch handlers for swipe
   const onTouchStart = (e: React.TouchEvent) => {
+    // Ignorer les touches sur les boutons
+    if ((e.target as HTMLElement).closest('button')) {
+      return;
+    }
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
   };
 
   const onTouchMove = (e: React.TouchEvent) => {
+    // Ignorer les touches sur les boutons
+    if ((e.target as HTMLElement).closest('button')) {
+      return;
+    }
     setTouchEnd(e.targetTouches[0].clientX);
   };
 
-  const onTouchEnd = () => {
+  const onTouchEnd = (e: React.TouchEvent) => {
+    // Ignorer les touches sur les boutons
+    if ((e.target as HTMLElement).closest('button')) {
+      return;
+    }
     if (!touchStart || !touchEnd) return;
     
     const distance = touchStart - touchEnd;
@@ -190,8 +207,21 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
     <div className="relative">
       {/* Left arrow button */}
       <button
-        onClick={() => scroll('left')}
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-1.5 md:p-2 transition-all duration-200"
+        type="button"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          scroll('left', e);
+        }}
+        onTouchStart={(e) => {
+          e.stopPropagation();
+        }}
+        onTouchEnd={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          scroll('left', e);
+        }}
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white shadow-lg rounded-full p-1.5 md:p-2 transition-all duration-200"
         aria-label="Témoignage précédent"
       >
         <svg
@@ -281,8 +311,21 @@ export const TestimonialsCarousel: React.FC<TestimonialsCarouselProps> = ({
 
       {/* Right arrow button */}
       <button
-        onClick={() => scroll('right')}
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg rounded-full p-1.5 md:p-2 transition-all duration-200"
+        type="button"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          scroll('right', e);
+        }}
+        onTouchStart={(e) => {
+          e.stopPropagation();
+        }}
+        onTouchEnd={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          scroll('right', e);
+        }}
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white shadow-lg rounded-full p-1.5 md:p-2 transition-all duration-200"
         aria-label="Témoignage suivant"
       >
         <svg
