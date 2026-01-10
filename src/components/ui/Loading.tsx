@@ -12,7 +12,7 @@ export const Loading: React.FC<LoadingProps> = ({
   const content = (
     <div className="flex flex-col items-center justify-center">
       <div className="spinner"></div>
-      {text && <p className="mt-4 text-gray-600">{text}</p>}
+      {text && <p className="mt-4 text-black">{text}</p>}
     </div>
   );
 

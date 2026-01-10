@@ -37,7 +37,7 @@ export const TenuesAlgeriennesPage: React.FC = () => {
           <h1 className="text-4xl font-serif text-center mb-4">
             Tenues Algériennes
           </h1>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-[13px]">
+          <p className="text-center text-black mb-12 max-w-2xl mx-auto text-[13px]">
             Explorez notre collection de tenues traditionnelles algériennes, 
             alliant authenticité et élégance.
           </p>
@@ -105,7 +105,7 @@ export const TenuesAlgeriennesPage: React.FC = () => {
             </div>
           ) : (
             <div className="text-center py-12">
-              <p className="text-gray-600 text-[13px]">
+              <p className="text-black text-[13px]">
                 Aucune tenue disponible pour le moment.
               </p>
             </div>

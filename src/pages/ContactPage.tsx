@@ -17,7 +17,7 @@ export const ContactPage: React.FC = () => {
       <div className="py-12 bg-[#f6f4f0] min-h-screen">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-serif text-center mb-4">Contact</h1>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-[13px]">
+          <p className="text-center text-black mb-12 max-w-2xl mx-auto text-[13px]">
             Prenez rendez-vous pour un essayage ou contactez-nous pour toute question.
           </p>
 
@@ -36,7 +36,7 @@ export const ContactPage: React.FC = () => {
           <div className="max-w-6xl mx-auto mb-8">
             <Card className="p-6">
               <h2 className="text-xl font-serif mb-6">Réserver un Essayage</h2>
-              <p className="text-gray-600 mb-6 text-[13px]">
+              <p className="text-black mb-6 text-[13px]">
                 Choisissez un créneau qui vous convient pour venir essayer nos créations.
               </p>
               {/* Intégration Calendly */}
@@ -122,7 +122,7 @@ export const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-2">Localisation</h3>
-                  <p className="text-gray-600 text-[13px]">
+                  <p className="text-black text-[13px]">
                     Gennevilliers, Île de France
                   </p>
                 </div>

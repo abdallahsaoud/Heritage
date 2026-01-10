@@ -36,7 +36,7 @@ const NotFoundPage: React.FC = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="text-center">
         <h1 className="text-6xl font-serif text-gold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-8">Page non trouvée</p>
+        <p className="text-xl text-black mb-8">Page non trouvée</p>
         <a
           href="/"
           className="btn btn-primary inline-block"

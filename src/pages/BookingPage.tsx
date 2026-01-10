@@ -332,7 +332,7 @@ export const BookingPage: React.FC = () => {
                   <h2 className="text-xl font-serif mb-4">
                     Réservation Confirmée!
                   </h2>
-                  <p className="text-gray-600 mb-8 text-[13px]">
+                  <p className="text-black mb-8 text-[13px]">
                     Votre rendez-vous a été enregistré avec succès. Vous
                     recevrez un email de confirmation à l'adresse{' '}
                     <strong>{formData.clientEmail}</strong>.

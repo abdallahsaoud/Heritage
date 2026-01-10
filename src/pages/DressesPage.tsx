@@ -41,7 +41,7 @@ export const DressesPage: React.FC = () => {
           <h1 className="text-4xl font-serif text-center mb-4">
             Notre Collection
           </h1>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-[13px]">
+          <p className="text-center text-black mb-12 max-w-2xl mx-auto text-[13px]">
             Explorez notre sélection de robes orientales traditionnelles et
             modernes.
           </p>
@@ -98,7 +98,7 @@ export const DressesPage: React.FC = () => {
             </div>
           ) : filteredDresses && filteredDresses.length > 0 ? (
             <>
-              <p className="text-gray-600 mb-6">
+              <p className="text-black mb-6 text-[13px]">
                 {filteredDresses.length} robe{filteredDresses.length > 1 ? 's' : ''}{' '}
                 trouvée{filteredDresses.length > 1 ? 's' : ''}
               </p>
@@ -135,7 +135,7 @@ export const DressesPage: React.FC = () => {
                       <h3 className="text-lg font-serif mt-1 mb-2">
                         {dress.name}
                       </h3>
-                      <p className="text-gray-600 text-[13px] mb-3 line-clamp-2">
+                      <p className="text-black text-[13px] mb-3 line-clamp-2">
                         {dress.description}
                       </p>
                       <div className="flex justify-between items-center">
@@ -163,7 +163,7 @@ export const DressesPage: React.FC = () => {
             </>
           ) : (
             <div className="text-center py-12">
-              <p className="text-gray-600 text-[13px]">
+              <p className="text-black text-[13px]">
                 Aucune robe trouvée avec ces critères.
               </p>
             </div>

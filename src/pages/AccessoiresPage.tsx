@@ -22,7 +22,7 @@ export const AccessoiresPage: React.FC = () => {
           <h1 className="text-4xl font-serif text-center mb-4">
             Accessoires
           </h1>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-[13px]">
+          <p className="text-center text-black mb-12 max-w-2xl mx-auto text-[13px]">
             Découvrez notre collection d'accessoires traditionnels pour compléter votre tenue avec élégance.
           </p>
 
@@ -80,7 +80,7 @@ export const AccessoiresPage: React.FC = () => {
             </div>
           ) : (
             <div className="text-center py-12">
-              <p className="text-gray-600 text-[13px]">
+              <p className="text-black text-[13px]">
                 Aucun accessoire disponible pour le moment.
               </p>
             </div>

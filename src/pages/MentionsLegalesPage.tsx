@@ -9,7 +9,7 @@ export const MentionsLegalesPage: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl font-serif text-center mb-4">Mentions Légales</h1>
-            <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-[13px]">
+            <p className="text-center text-black mb-12 max-w-2xl mx-auto text-[13px]">
               Informations légales concernant HÉRITAGE
             </p>
 

@@ -154,7 +154,7 @@ export const DressDetailPage: React.FC = () => {
               ? 'Robe indisponible' 
               : 'Robe non trouvée'}
           </h1>
-          <p className="text-gray-600 mb-6 text-[13px]">
+          <p className="text-black mb-6 text-[13px]">
             {error?.message?.includes('not available')
               ? 'Cette robe n\'est actuellement pas disponible.'
               : 'La robe que vous recherchez n\'existe pas ou n\'est plus disponible.'}
