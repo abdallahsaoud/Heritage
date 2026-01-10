@@ -18,8 +18,8 @@
       "sfifa-argentee-luxe"
     ],
     "createdAt": "2024-01-01T00:00:00.000Z",
-    "rentalPrice": 79.90,
-    "purchasePrice": 200,
+    "rentalPrice": 89.90,
+    "purchasePrice": 230,
     "size": "36/40"
   },
   {
@@ -37,7 +37,7 @@
     "available": true,
     "createdAt": "2024-01-01T00:00:00.000Z",
     "rentalPrice": 49.90,
-    "purchasePrice": 120,
+    "purchasePrice": 130,
     "size": "36/40"
   },
   {
@@ -54,7 +54,7 @@
     ],
     "available": true,
     "createdAt": "2024-01-01T00:00:00.000Z",
-    "rentalPrice": 69.90,
+    "rentalPrice": 79.90,
     "purchasePrice": 140,
     "size": "36/40"
   },
@@ -84,7 +84,7 @@
     "id": "karakou-bordeaux",
     "name": "LILA",
     "type": "karakou",
-    "description": "Explorez LILA, un karakou en velours bordeaux profond aux broderies dorées et argentées d'une opulence remarquable.\nCette tenue se compose d'une veste en velours bordeaux richement brodée de motifs floraux et arabesques, incrustée de pierres précieuses aux couleurs chatoyantes (vert émeraude, rouge rubis, orange, cristaux transparents), d'un col montant brodé, de manches longues aux poignets ornés et d'une coupe cintrée qui s'évase élégamment. Le karakou est accompagné soit d'une jupe en satin blanc, soit d'une jupe en brocard, soit d'un pantalon en velours bordeaux assorti, ou encore d'un pantalon traditionnel en brocard rose parme.\nCe modèle traditionnel très chic, cousu main avec des matériaux et des pierres de qualité, incarne l'excellence de l'artisanat oriental.\n\nParfaite pour vos mariages, fiançailles, grandes fêtes ou cérémonies, cette pièce d'exception vous accompagnera lors de vos événements les plus prestigieux.",
+    "description": "Découvrez le modèle LILA, un karakou en velours bordeaux profond aux broderies dorées et argentées d'une opulence remarquable.\nCette tenue se compose d'une veste en velours bordeaux richement brodée de motifs floraux et arabesques, incrustée de pierres précieuses aux couleurs chatoyantes (vert émeraude, rouge rubis, orange, cristaux transparents), d'un col montant brodé, de manches longues aux poignets ornés et d'une coupe cintrée qui s'évase élégamment. Le karakou est accompagné soit d'une jupe en satin blanc, soit d'une jupe en brocard, soit d'un pantalon en velours bordeaux assorti, ou encore d'un pantalon traditionnel en brocard rose parme.\nCe modèle traditionnel très chic, cousu main avec des matériaux et des pierres de qualité, incarne l'excellence de l'artisanat oriental.\n\nParfaite pour vos mariages, fiançailles, grandes fêtes ou cérémonies, cette pièce d'exception vous accompagnera lors de vos événements les plus prestigieux.",
     "imageUrl": "/assets/products/karakou-bordeaux-3.webp",
     "images": [
       "/assets/products/karakou-bordeaux-3.webp",
@@ -92,7 +92,7 @@
     ],
     "available": true,
     "createdAt": "2024-01-01T00:00:00.000Z",
-    "rentalPrice": 179.90,
+    "rentalPrice": 199.90,
     "purchasePrice": 700,
     "size": "36/40"
   },
@@ -116,7 +116,7 @@
     ],
     "createdAt": "2024-01-01T00:00:00.000Z",
     "rentalPrice": 49.90,
-    "purchasePrice": 120,
+    "purchasePrice": 130,
     "size": "36/40"
   },
   {
@@ -155,7 +155,7 @@
       "sfifa-argentee-luxe"
     ],
     "createdAt": "2024-01-01T00:00:00.000Z",
-    "rentalPrice": 149.90,
+    "rentalPrice": 169.90,
     "purchasePrice": 500,
     "size": "36/40"
   },
@@ -225,7 +225,7 @@
     ],
     "createdAt": "2024-01-01T00:00:00.000Z",
     "rentalPrice": 129.90,
-    "purchasePrice": 350,
+    "purchasePrice": 360,
     "size": "36/40"
   },
   {

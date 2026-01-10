@@ -12,7 +12,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    text: "J´ai loué la Takchita SARAH pour mes fiançailles…une pure merveille🤍 Tout le monde m'a demandé d'où il venait ! Merci pour ta disponibilité !",
+    text: "J´ai loué la Takchita SARAH pour mes fiançailles…une pure merveille🤍 Tout le monde m'a demandé d'où elle venait ! Merci pour ta disponibilité !",
     rating: 5,
   },
   {
